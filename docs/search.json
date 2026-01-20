@@ -20,13 +20,23 @@
     ]
   },
   {
+    "objectID": "week2.html",
+    "href": "week2.html",
+    "title": "2  Week2",
+    "section": "",
+    "text": "xaringanExtra::embed_xaringan(url = \"https://mixedmint.github.io/RS_xaringan/#1\",\n                              ratio = \"16:9\")",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week2</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "2  Summary",
+    "title": "3  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
     ]
   },
   {

@@ -1,0 +1,8 @@
+---
+title: "Week2"
+---
+
+```{r}
+xaringanExtra::embed_xaringan(url = "https://mixedmint.github.io/RS_xaringan/#1",
+                              ratio = "16:9")
+```
