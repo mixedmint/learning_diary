@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "Learning Diary",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Introduction",
     "crumbs": [
-      "Preface"
+      "Introduction"
     ]
   },
   {
@@ -77,6 +77,16 @@
     "text": "2.2 Practical\nSince I was unable to load data in SNAP (likely due to my MacOS compatibility issue), I wrote this part based on the practical preview page.\nIn the practical, the objective was to source data from Copernicus (Sentinel-2) and USGS (Landsat) to explore their spectral signatures.\nWe explored the concept of “Spectral Feature Space” theoretically (e.g., Red Reflectance vs. NIR scatterplots). This visualization, especially the “Tasseled Caps” distribution, showed that raw pixel values are not randomly distributed. Instead, they cluster mathematically based on physical properties like brightness (identifying urban areas), greenness (vegetation), and wetness (moisture). One significant benefit of this analysis was to see how spectral signatures distinguish land types, which is useful for automated classification. And I am going to talk about the applications of this method in literatures in the following part.\nHowever, in a complex urban environment, I questioned whether the downsampling from 10m bands to 20m would result in a loss of details. Merging distinct features like narrow streets and gardens into single pixels might create mixed signals, making the spectral signatures less accurate.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week1</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Learning Diary",
+    "section": "About Me",
+    "text": "About Me\nHi everyone! I am Ruijue Song. I majored in Urban Management in Central University of Finance and economy in China from 2019 to 2023.\nI am deeply interested in spatial data science, with a specific focus on using computational tools (like R and GEE) to automate complex urban analyses. So I hope CASA0023 will equip me with the technical skills to process and interpret satellite imagery, enabling me to move beyond traditional GIS mapping toward more advanced, data-driven environmental monitoring.",
+    "crumbs": [
+      "Introduction"
     ]
   }
 ]
