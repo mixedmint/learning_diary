@@ -150,10 +150,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">2</span> Summary</a>
   <ul class="collapse">
-  <li><a href="#lecture" id="toc-lecture" class="nav-link" data-scroll-target="#lecture"><span class="header-section-number">2.1</span> Lecture</a>
-  <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">2.1.1</span> </a></li>
-  </ul></li>
+  <li><a href="#lecture" id="toc-lecture" class="nav-link" data-scroll-target="#lecture"><span class="header-section-number">2.1</span> Lecture</a></li>
   <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical"><span class="header-section-number">2.2</span> Practical</a></li>
   </ul></li>
   <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">3</span> Application</a></li>
@@ -188,12 +185,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="lecture" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="lecture"><span class="header-section-number">2.1</span> Lecture</h2>
 <p>This lecture in week 1 provided an introduction to the world of remote sensing, establishing the physical foundation of Earth Observation and explaining how electromagnetic waves interact with earth’s surface and atmosphere via absorption, transmission, scattering and reflection. As the atmosphere would affect satellite sensors by scattering, atmospheric correction is necessary.</p>
-<section id="section" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="section"><span class="header-section-number">2.1.1</span> </h3>
 <p>What I found most crucial was the framework of <strong>four resolutions (spatial, spectral, radiometric and temporal)</strong>, which serves as a critical standard for evaluating sensor suitability.</p>
 <p><strong>The sensor selection is fundamentally a trade-off</strong>. For example, while MODIS has high temporal consistency (high update frequency), World Imagery offers higher spatial resolution, making it more suitable for distinguishing fine details in urban areas. In conclusion, there is no perfect sensor.</p>
 <p><strong>The choice of data must always be dictated by the specific characteristics of the research objects and the requirements of the study.</strong></p>
-</section>
 </section>
 <section id="practical" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="practical"><span class="header-section-number">2.2</span> Practical</h2>
@@ -205,8 +199,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="application" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Application</h1>
-<p>In this week, I mainly focus on literatures concerning applications of Sentinel-2 spectral signature on <strong>vegetation monitoring</strong>. In this area, there is a notable shift in literature from relying on traditional broad-band indices to exploiting specific narrow-band spectral signatures. Standard broad-band indices (such as the normalized difference vegetation index, NDVI) often saturate at high leaf area index (LAI), which is a methodological limitation that newer studies solve by using red-edge bands. Sun et al.&nbsp;(2020) demonstrated that vegetation indices derived specifically from Sentinel-2’s narrow red-edge bands (RE2 and RE3) yield significantly higher accuracy for LAI estimation than traditional broad-band approaches. This finding is critical as it demonstrates the theoretical framework of spectral resolution. It suggests that for detailed vegetation monitoring, having more specific spectral bands is usually more useful than simply having higher spatial resolution. The clues about plant health are hidden in these narrow bands, and we will miss them if we only focus on spatial resolution.</p>
-<p>Consequently, the selection of sensors in modern studies has become a strategic evaluation, not just about spatial details, but also about evaluating spectral capabilities. While older sensors like Landsat-8 are better suited for providing historical data, comparative analyses show that Sentinel-2 has distinct advantages for agriculture study and vegetation monitoring for its specific spectral configuration. Addabbo et al.&nbsp;(2016) argue that a series of indexes for vegetation analysis can be obtained by using Sentinel-2 near infrared spectral band images, which was previously impossible by simply using Landsat-8 data. Reflecting on the trade-off, while Landsat-8 is essential for long-term trend analysis due to its extensive archive, modern vegetation monitoring needs the higher spectral sensitivity that only newer sensors could provide. This literature reinforces the lecture’s conclusion: the best sensor is not absolute but is dictated by the primary target of the research.</p>
+<p>In this week, I mainly focus on literatures concerning applications of Sentinel-2 spectral signature on <strong>vegetation monitoring</strong>. In this area, there is a notable shift in literature from relying on traditional broad-band indices to exploiting <strong>specific narrow-band</strong> spectral signatures.</p>
+<p>Standard broad-band indices (such as the normalized difference vegetation index, NDVI) often saturate at high leaf area index (LAI), which is a methodological limitation that newer studies solve by using red-edge bands. <em>Sun et al.&nbsp;(2020)</em> demonstrated that vegetation indices derived specifically from <strong>Sentinel-2’s narrow red-edge bands (RE2 and RE3)</strong> yield significantly higher accuracy for LAI estimation than traditional broad-band approaches. This finding is critical as it demonstrates the theoretical framework of spectral resolution. It suggests that for detailed vegetation monitoring, having more specific spectral bands is usually more useful than simply having higher spatial resolution. The clues about plant health are hidden in these narrow bands, and we will miss them if we only focus on spatial resolution.</p>
+<p>Consequently, the selection of sensors in modern studies has become a strategic evaluation, not just about spatial details, but also about <strong>evaluating spectral capabilities</strong>. While older sensors like Landsat-8 are better suited for providing historical data, comparative analyses show that Sentinel-2 has distinct advantages for agriculture study and vegetation monitoring for its specific spectral configuration. <em>Addabbo et al.&nbsp;(2016)</em> argue that a series of indexes for vegetation analysis can be obtained by using <strong>Sentinel-2 near infrared spectral band images</strong>, which was previously impossible by simply using Landsat-8 data. Reflecting on the trade-off, while Landsat-8 is essential for long-term trend analysis due to its extensive archive, modern vegetation monitoring needs the higher spectral sensitivity that only newer sensors could provide.</p>
+<p>These literatures reinforce the lecture’s conclusion: the best sensor is not absolute but is dictated by the primary target of the research.</p>
 </section>
 <section id="reflection" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Reflection</h1>
