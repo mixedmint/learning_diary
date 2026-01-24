@@ -24,7 +24,7 @@
     "href": "week2.html",
     "title": "2  Week2",
     "section": "",
-    "text": "xaringanExtra::embed_xaringan(url = \"https://mixedmint.github.io/RS_xaringan/#1\",\n                              ratio = \"16:9\")",
+    "text": "Here is a short presentation discussing Sentinel-2 mission:\n\n\n\n\n\n\n\n\nFor full screen presentation of these slides, they are available here！",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week2</span>"
     ]
@@ -47,6 +47,36 @@
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "week1.html",
+    "href": "week1.html",
+    "title": "1  Week1",
+    "section": "",
+    "text": "2 Summary",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week1</span>"
+    ]
+  },
+  {
+    "objectID": "week1.html#lecture",
+    "href": "week1.html#lecture",
+    "title": "1  Week1",
+    "section": "2.1 Lecture",
+    "text": "2.1 Lecture\nThis lecture in week 1 provided an introduction to the world of remote sensing, establishing the physical foundation of Earth Observation and explaining how electromagnetic waves interact with earth’s surface and atmosphere via absorption, transmission, scattering and reflection. As the atmosphere would affect satellite sensors by scattering, atmospheric correction is necessary.\n\n2.1.1 \nWhat I found most crucial was the framework of four resolutions (spatial, spectral, radiometric and temporal), which serves as a critical standard for evaluating sensor suitability.\nThe sensor selection is fundamentally a trade-off. For example, while MODIS has high temporal consistency (high update frequency), World Imagery offers higher spatial resolution, making it more suitable for distinguishing fine details in urban areas. In conclusion, there is no perfect sensor.\nThe choice of data must always be dictated by the specific characteristics of the research objects and the requirements of the study.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week1</span>"
+    ]
+  },
+  {
+    "objectID": "week1.html#practical",
+    "href": "week1.html#practical",
+    "title": "1  Week1",
+    "section": "2.2 Practical",
+    "text": "2.2 Practical\nSince I was unable to load data in SNAP (likely due to my MacOS compatibility issue), I wrote this part based on the practical preview page.\nIn the practical, the objective was to source data from Copernicus (Sentinel-2) and USGS (Landsat) to explore their spectral signatures.\nWe explored the concept of “Spectral Feature Space” theoretically (e.g., Red Reflectance vs. NIR scatterplots). This visualization, especially the “Tasseled Caps” distribution, showed that raw pixel values are not randomly distributed. Instead, they cluster mathematically based on physical properties like brightness (identifying urban areas), greenness (vegetation), and wetness (moisture). One significant benefit of this analysis was to see how spectral signatures distinguish land types, which is useful for automated classification. And I am going to talk about the applications of this method in literatures in the following part.\nHowever, in a complex urban environment, I questioned whether the downsampling from 10m bands to 20m would result in a loss of details. Merging distinct features like narrow streets and gardens into single pixels might create mixed signals, making the spectral signatures less accurate.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week1</span>"
     ]
   }
 ]

@@ -2,7 +2,11 @@
 title: "Week2"
 ---
 
-```{r}
+Here is a short presentation discussing Sentinel-2 mission:
+
+```{r echo=FALSE}
 xaringanExtra::embed_xaringan(url = "https://mixedmint.github.io/RS_xaringan/#1",
                               ratio = "16:9")
 ```
+
+For full screen presentation of these slides, they are available [here](https://mixedmint.github.io/RS_xaringan/#1)！

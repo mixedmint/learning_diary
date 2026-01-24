@@ -1,0 +1,41 @@
+---
+title: "Week1"
+---
+
+# Summary
+
+## Lecture
+
+This lecture in week 1 provided an introduction to the world of remote sensing, establishing the physical foundation of Earth Observation and explaining how electromagnetic waves interact with earth’s surface and atmosphere via absorption, transmission, scattering and reflection. As the atmosphere would affect satellite sensors by scattering, atmospheric correction is necessary.
+
+What I found most crucial was the framework of **four resolutions (spatial, spectral, radiometric and temporal)**, which serves as a critical standard for evaluating sensor suitability.
+
+**The sensor selection is fundamentally a trade-off**. For example, while MODIS has high temporal consistency (high update frequency), World Imagery offers higher spatial resolution, making it more suitable for distinguishing fine details in urban areas. In conclusion, there is no perfect sensor.
+
+**The choice of data must always be dictated by the specific characteristics of the research objects and the requirements of the study.**
+
+## Practical
+
+*Since I was unable to load data in SNAP (likely due to my MacOS compatibility issue), I wrote this part based on the practical preview page.*
+
+In the practical, the objective was to source data from Copernicus (Sentinel-2) and USGS (Landsat) to explore their **spectral signatures**.
+
+We explored the concept of “Spectral Feature Space” theoretically (e.g., Red Reflectance vs. NIR scatterplots). This visualization, especially the “Tasseled Caps” distribution, showed that raw pixel values are not randomly distributed. Instead, they cluster mathematically based on physical properties like brightness (identifying urban areas), greenness (vegetation), and wetness (moisture). One significant benefit of this analysis was to see **how spectral signatures distinguish land types, which is useful for automated classification.** And I am going to talk about the applications of this method in literatures in the following part.
+
+However, in a complex urban environment, I questioned **whether the downsampling from 10m bands to 20m would result in a loss of details**. Merging distinct features like narrow streets and gardens into single pixels might create mixed signals, making the spectral signatures less accurate.
+
+# Application
+
+In this week, I mainly focus on literatures concerning applications of Sentinel-2 spectral signature on **vegetation monitoring**. In this area, there is a notable shift in literature from relying on traditional broad-band indices to exploiting **specific narrow-band** spectral signatures.
+
+Standard broad-band indices (such as the normalized difference vegetation index, NDVI) often saturate at high leaf area index (LAI), which is a methodological limitation that newer studies solve by using red-edge bands. *Sun et al. (2020)* demonstrated that vegetation indices derived specifically from **Sentinel-2’s narrow red-edge bands (RE2 and RE3)** yield significantly higher accuracy for LAI estimation than traditional broad-band approaches. This finding is critical as it demonstrates the theoretical framework of spectral resolution. It suggests that for detailed vegetation monitoring, having more specific spectral bands is usually more useful than simply having higher spatial resolution. The clues about plant health are hidden in these narrow bands, and we will miss them if we only focus on spatial resolution.
+
+Consequently, the selection of sensors in modern studies has become a strategic evaluation, not just about spatial details, but also about **evaluating spectral capabilities**. While older sensors like Landsat-8 are better suited for providing historical data, comparative analyses show that Sentinel-2 has distinct advantages for agriculture study and vegetation monitoring for its specific spectral configuration. *Addabbo et al. (2016)* argue that a series of indexes for vegetation analysis can be obtained by using **Sentinel-2 near infrared spectral band images**, which was previously impossible by simply using Landsat-8 data. Reflecting on the trade-off, while Landsat-8 is essential for long-term trend analysis due to its extensive archive, modern vegetation monitoring needs the higher spectral sensitivity that only newer sensors could provide.
+
+These literatures reinforce the lecture’s conclusion: the best sensor is not absolute but is dictated by the primary target of the research.
+
+# Reflection
+
+Reflecting on the "spectral feature space," I realized that remote sensing is more than just locating features, it is about **understanding the biophysical composition**, which is essential for making urban policy.
+
+For example, using red-edge bands allows us to prove if a park is biologically healthy, rather than just checking if it looks "green" on a map. However, the problem I noticed that losing spatial detail when we prioritize spectral bands is a real challenge for complex cities. If we rely on Sentinel-2’s 20m pixels to study narrow streets, we might get mixed signals (like mixing a tree with a road), which could lead to wrong decisions in policies like managing urban heat islands. This trade-off makes me realize that for complex cities, just using SNAP (GUI) might not be enough. We have to explore using coding (like R or GEE) to handle these data challenges more flexibly or perhaps combine Sentinel-2 with higher-resolution images to get the best of both worlds.

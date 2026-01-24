@@ -4,11 +4,11 @@ project:
 
 book:
   title: "Learning Diary"
-  author: "Norah Jones"
+  author: "Ruijue Song"
   date: "1/20/2026"
   chapters:
     - index.qmd
-    - intro.qmd
+    - week1.qmd
     - week2.qmd
     - summary.qmd
     - references.qmd
