@@ -1,8 +1,8 @@
 ---
-title: "Week2"
+title: "Sentinel-2"
 ---
 
-Here is a short presentation discussing Sentinel-2 mission:
+Here is a short presentation discussing **Sentinel-2** mission:
 
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan(url = "https://mixedmint.github.io/RS_xaringan/#1",

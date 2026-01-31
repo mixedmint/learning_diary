@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ruijue Song">
-<meta name="dcterms.date" content="2026-01-20">
 
-<title>Learning Diary</title>
+<title>3&nbsp; Corrections – Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,7 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week1.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./week2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -84,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -129,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week3.html" class="sidebar-item-text sidebar-link">
+  <a href="./week3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></span></a>
   </div>
 </li>
@@ -149,10 +168,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">3.1</span> Summary</a>
   <ul class="collapse">
-  <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">About Me</a></li>
+  <li><a href="#ratio-ndvi" id="toc-ratio-ndvi" class="nav-link" data-scroll-target="#ratio-ndvi"><span class="header-section-number">3.1.1</span> Ratio: NDVI</a></li>
+  <li><a href="#texture" id="toc-texture" class="nav-link" data-scroll-target="#texture"><span class="header-section-number">3.1.2</span> Texture</a></li>
   </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">3.2</span> Application</a>
+  <ul class="collapse">
+  <li><a href="#ratio-nbr" id="toc-ratio-nbr" class="nav-link" data-scroll-target="#ratio-nbr"><span class="header-section-number">3.2.1</span> Ratio: NBR</a></li>
+  <li><a href="#texture-distinguishing-slums" id="toc-texture-distinguishing-slums" class="nav-link" data-scroll-target="#texture-distinguishing-slums"><span class="header-section-number">3.2.2</span> Texture: Distinguishing Slums</a></li>
+  </ul></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">3.3</span> Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -161,26 +187,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Learning Diary</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ruijue Song </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 20, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -190,15 +204,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level1 unnumbered">
-<h1 class="unnumbered">Introduction</h1>
-<section id="about-me" class="level2">
-<h2 class="anchored" data-anchor-id="about-me">About Me</h2>
-<p>Hi everyone! I am Ruijue Song. I majored in Urban Management in Central University of Finance and economy in China from 2019 to 2023.</p>
-<p>I am deeply interested in spatial data science, with a specific focus on using computational tools (like R and GEE) to automate complex urban analyses. So I hope CASA0023 will equip me with the technical skills to process and interpret satellite imagery, enabling me to move beyond traditional GIS mapping toward more advanced, data-driven environmental monitoring.</p>
-
-
+<section id="summary" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.1</span> Summary</h2>
+<p><strong>Corrections and enhancement</strong> are the two main parts of EO data pre-processing. This week, I mainly focused on two enhancements: <strong>Ratio and Texture</strong>.</p>
+<section id="ratio-ndvi" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="ratio-ndvi"><span class="header-section-number">3.1.1</span> Ratio: NDVI</h3>
+<p>Ratioing exploits the contrast between spectral bands to highlight landscape features. A classic application is the <strong>Normalized Difference Vegetation Index (NDVI)</strong>. This index uses the fact that healthy vegetation reflects Near-Infrared (NIR) light strongly while absorbing most Red light for photosynthesis. We could use the NDVI index to highlight areas with healthy vegetation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/NDVI_healthy_stressed.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Source: <a href="https://www.agricolus.com/en/vegetation-indices-ndvi-ndmi/" style="color: gray; text-decoration: underline;">Agricolus</a>
+</p>
+<p>As shown in picture, I plotted the NDVI distribution of City of Cape Town using Landsat imagery from July 2022 in practical.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ndvi_2_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Normalised Difference Vegetation Index for City of Cape Town
+</p>
+<p>We could get more clear results by pulling out certain areas where NDVI is greater than 0.2. It is important to note that July is winter in Cape Town, which is the rainy season. The bright yellow and green areas in the north are mostly farmlands. Crops like wheat grow rapidly during this time, resulting in high NDVI values.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ndvi_2_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  NDVI for City of Cape Town (only showing values above 0.2)
+</p>
+<p>In contrast, the southern areas (like the Cape Peninsula) show lower values. This is because the native “fynbos” vegetation consists of woody shrubs with small leaves, which naturally reflect less light than leafy crops. Also, the steep mountains cast long shadows in winter, which can lower the NDVI readings.</p>
 </section>
+<section id="texture" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="texture"><span class="header-section-number">3.1.2</span> Texture</h3>
+<p>Texture measures the spatial relationship and structural complexity between a pixel and its neighbors. It quantifies <strong>“smoothness”</strong> (high similarity between neighbors) versus <strong>“roughness”</strong> (high contrast).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/texture_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Texture for City of Cape Town
+</p>
+<p>In the Cape Town map, the colors are mixed together rather than separated into big blocks. The yellow pixels represent small, smooth spots, such as the middle of a field, where the color doesn’t change much. The blue and green pixels represent rough areas, which are usually the edges where one object ends and another begins. This speckled look shows that the whole image is full of small details and frequent changes, rather than large, empty spaces.</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>In my map, the “speckled” mix of yellow and blue suggests the texture is very fragmented. This is likely due to the <strong>small 3x3 window size</strong> used in the analysis.</p>
+<p>A small 3x3 window focuses on immediate neighbors, which makes it very sensitive to fine details and edges. The <strong>benefit</strong> is that it captures precise boundaries between objects. However, a <strong>limitation</strong> is that it picks up too much “noise”, resulting in a salt-and-pepper look. This makes it harder to identify broad, continuous zones (like a whole farm) compared to what a larger window (e.g., 7x7 or 15x15) might show.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="application" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="application"><span class="header-section-number">3.2</span> Application</h2>
+<section id="ratio-nbr" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="ratio-nbr"><span class="header-section-number">3.2.1</span> Ratio: NBR</h3>
+<p>In week1&amp;2, I explored how spectral indices like NDVI and red-edge ratios are crucial for monitoring vegetation health (LAI) and mitigating Urban Heat Islands. Additionally, a key application in disaster management is the <strong>Normalized Burn Ratio (NBR)</strong>, which contrasts Near-Infrared (NIR) and Shortwave Infrared (SWIR) bands to identify burnt areas. High NBR values reflect healthy vegetation, while low values point to bare ground or recent burns. <a href="https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/in-detail/normalized-burn-ratio">This website</a> introduces how NBR can be used to identify burn severity by comparing the difference between the pre-fire and post-fire NBR (dNBR or ∆NBR).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/NBR.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Comparison of the spectral response of healthy vegetation and burned areas. Source: U.S. Forest service.
+</p>
+</section>
+<section id="texture-distinguishing-slums" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="texture-distinguishing-slums"><span class="header-section-number">3.2.2</span> Texture: Distinguishing Slums</h3>
+<p>While spectral ratios are powerful, they are limited by the “same spectrum, different object” phenomenon. Relying solely on spectral data is insufficient for complex heterogeneous environments, such as <strong>distinguishing between formal and informal urban settlements (slums and shantytowns)</strong>. Studies by <span class="citation" data-cites="wang2019">Wang, Kuffer, and Pfeffer (<a href="references.html#ref-wang2019" role="doc-biblioref">2019</a>)</span> have successfully employed texture measures (GLCM) to distinguish slums from formal areas. They note that slums typically exhibit different structural patterns compared to planned housing. However, they point out a major challenge: the accuracy of the results depends heavily on the window size used. This mirrors the limitations I observed in my own practical results, where an arbitrary window size might lead to noise.</p>
+</section>
+</section>
+<section id="reflection" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
+<p>To be honest, I found this week’s focus on enhancement much more engaging and interesting than the technical corrections process. It felt like I was finally drawing out the hidden stories in the data rather than just fixing errors. The biggest realization for me was that spectral data (ratio) isn’t the whole truth. Texture analysis fascinated me because it visualized the “roughness” of the city, picking up details that NDVI missed.</p>
+<p>However, the practical side made me realize how much my final map depended on a simple, subjective choice: the window size. It makes me slightly nervous to think about this in a real policy context: if we pick the wrong window size, we could completely misclassify a vulnerable settlement. In the future, I hope to explore more about data fusion (combining NDVI and texture), hoping that combining methods might reduce this reliance on manual trial and error.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-wang2019" class="csl-entry" role="listitem">
+Wang, Jiong, Monika Kuffer, and Karin Pfeffer. 2019. <span>“The Role of Spatial Heterogeneity in Detecting Urban Slums.”</span> <em>Computers, Environment and Urban Systems</em> 73 (January): 95–107. <a href="https://doi.org/10.1016/j.compenvurbsys.2018.08.007">https://doi.org/10.1016/j.compenvurbsys.2018.08.007</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -604,10 +698,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./week2.html" class="pagination-link" aria-label="Sentinel-2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sentinel-2</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week1.html" class="pagination-link" aria-label="Getting started with remote sensing">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting started with remote sensing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

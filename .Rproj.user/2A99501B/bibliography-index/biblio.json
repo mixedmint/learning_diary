@@ -27,6 +27,123 @@
             "title": "Literate programming",
             "type": "article-journal",
             "volume": "27"
+        },
+        {
+            "DOI": "10.1109/TGRS.2019.2940826",
+            "URL": "https://ieeexplore.ieee.org/document/8851397/",
+            "author": [
+                {
+                    "family": "Sun",
+                    "given": "Yuanheng"
+                },
+                {
+                    "family": "Qin",
+                    "given": "Qiming"
+                },
+                {
+                    "family": "Ren",
+                    "given": "Huazhong"
+                },
+                {
+                    "family": "Zhang",
+                    "given": "Tianyuan"
+                },
+                {
+                    "family": "Chen",
+                    "given": "Shanshan"
+                }
+            ],
+            "container-title": "IEEE Transactions on Geoscience and Remote Sensing",
+            "id": "sun2020",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        2
+                    ]
+                ]
+            },
+            "page": "826-840",
+            "title": "Red-edge band vegetation indices for leaf area index estimation from sentinel-2/MSI imagery",
+            "type": "article-journal",
+            "volume": "58"
+        },
+        {
+            "DOI": "10.21014/acta_imeko.v5i2.352",
+            "URL": "https://acta.imeko.org/index.php/acta-imeko/article/view/IMEKO-ACTA-05%20%282016%29-02-07",
+            "author": [
+                {
+                    "family": "Addabbo",
+                    "given": "Pia"
+                },
+                {
+                    "family": "Focareta",
+                    "given": "Mariano"
+                },
+                {
+                    "family": "Marcuccio",
+                    "given": "Salvo"
+                },
+                {
+                    "family": "Votto",
+                    "given": "Claudio"
+                },
+                {
+                    "family": "Ullo",
+                    "given": "Silvia Liberata"
+                }
+            ],
+            "container-title": "ACTA IMEKO",
+            "id": "addabbo2016",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        9,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "44",
+            "title": "Contribution of Sentinel-2 data for applications in vegetation monitoring",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "DOI": "10.1016/j.compenvurbsys.2018.08.007",
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0198971518301947",
+            "author": [
+                {
+                    "family": "Wang",
+                    "given": "Jiong"
+                },
+                {
+                    "family": "Kuffer",
+                    "given": "Monika"
+                },
+                {
+                    "family": "Pfeffer",
+                    "given": "Karin"
+                }
+            ],
+            "container-title": "Computers, Environment and Urban Systems",
+            "id": "wang2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "95-107",
+            "title": "The role of spatial heterogeneity in detecting urban slums",
+            "type": "article-journal",
+            "volume": "73"
         }
     ],
     "project_biblios": [
