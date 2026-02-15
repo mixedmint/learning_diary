@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Corrections – Learning Diary</title>
+<title>4&nbsp; Policy: Singapore’s Cooling Strategy – Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week4&amp;5.html" rel="next">
-<link href="./week2.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./week3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -91,6 +91,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -103,7 +132,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week4&amp;5.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy: Singapore’s Cooling Strategy</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,13 +177,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week3.html" class="sidebar-item-text sidebar-link active">
+  <a href="./week3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week4&amp;5.html" class="sidebar-item-text sidebar-link">
+  <a href="./week4&amp;5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy: Singapore’s Cooling Strategy</span></span></a>
   </div>
 </li>
@@ -174,17 +203,13 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">3.1</span> Summary</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">4.1</span> Summary</a>
   <ul class="collapse">
-  <li><a href="#ratio-ndvi" id="toc-ratio-ndvi" class="nav-link" data-scroll-target="#ratio-ndvi"><span class="header-section-number">3.1.1</span> Ratio: NDVI</a></li>
-  <li><a href="#texture" id="toc-texture" class="nav-link" data-scroll-target="#texture"><span class="header-section-number">3.1.2</span> Texture</a></li>
+  <li><a href="#ura-master-plan-2025" id="toc-ura-master-plan-2025" class="nav-link" data-scroll-target="#ura-master-plan-2025"><span class="header-section-number">4.1.1</span> URA Master Plan 2025</a></li>
+  <li><a href="#singapore-green-plan-2030" id="toc-singapore-green-plan-2030" class="nav-link" data-scroll-target="#singapore-green-plan-2030"><span class="header-section-number">4.1.2</span> Singapore Green Plan 2030</a></li>
   </ul></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">3.2</span> Application</a>
-  <ul class="collapse">
-  <li><a href="#ratio-nbr" id="toc-ratio-nbr" class="nav-link" data-scroll-target="#ratio-nbr"><span class="header-section-number">3.2.1</span> Ratio: NBR</a></li>
-  <li><a href="#texture-distinguishing-slums" id="toc-texture-distinguishing-slums" class="nav-link" data-scroll-target="#texture-distinguishing-slums"><span class="header-section-number">3.2.2</span> Texture: Distinguishing Slums</a></li>
-  </ul></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">3.3</span> Reflection</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">4.2</span> Application</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">4.3</span> Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -193,7 +218,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy: Singapore’s Cooling Strategy</span></h1>
 </div>
 
 
@@ -210,93 +235,63 @@ div.csl-indent {
 </header>
 
 
-<section id="summary" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.1</span> Summary</h2>
-<p><strong>Corrections and enhancement</strong> are the two main parts of EO data pre-processing. This week, I mainly focused on two enhancements: <strong>Ratio and Texture</strong>.</p>
-<section id="ratio-ndvi" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="ratio-ndvi"><span class="header-section-number">3.1.1</span> Ratio: NDVI</h3>
-<p>Ratioing exploits the contrast between spectral bands to highlight landscape features. A classic application is the <strong>Normalized Difference Vegetation Index (NDVI)</strong>. This index uses the fact that healthy vegetation reflects Near-Infrared (NIR) light strongly while absorbing most Red light for photosynthesis. We could use the NDVI index to highlight areas with healthy vegetation.</p>
+<section id="summary" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.1</span> Summary</h2>
+<section id="ura-master-plan-2025" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="ura-master-plan-2025"><span class="header-section-number">4.1.1</span> URA Master Plan 2025</h3>
+<p>The <em>Urban Redevelopment Authority (URA) Master Plan</em> is the statutory land use plan that guides Singapore’s development over the next 10 to 15 years. Unlike typical zoning maps, the 2025 Master Plan introduced a fascinating theme: Strengthening Urban Resilience. It explicitly sets out to create <strong>“A Cool City in a Warming World”</strong>, acknowledging that for a tropical island nation, rising temperatures aren’t just an environmental issue, but also an existential one.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/NDVI_healthy_stressed.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="images/future_tem.avif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p style="text-align: left; color: gray; font-size: 0.8em;">
-  Source: <a href="https://www.agricolus.com/en/vegetation-indices-ndvi-ndmi/" style="color: gray; text-decoration: underline;">Agricolus</a>
+Under the worst-case scenario with high emissions, high temperatures will become a serious problem for Singapore. <a href="https://www.uradraftmasterplan.gov.sg/themes/strengthening-urban-resilience/a-cool-city-in-a-warming-world/" style="color: gray; text-decoration: underline;">Source</a>
 </p>
-<p>As shown in picture, I plotted the NDVI distribution of City of Cape Town using Landsat imagery from July 2022 in practical.</p>
+<p>This sounds visionary, right? But here is the challenge: Singapore is already one of the densest cities on Earth. The Master Plan constantly faces a tension between <strong>intensification</strong> (building taller and denser to house people) and <strong>livability</strong> (keeping the city cool and green). Developers naturally want to maximize Gross Floor Area (GFA), which often means more concrete and heat retention. So, while the policy principles of spatial resilience are there, translating them into a concrete jungle without turning it into an oven is incredibly difficult.</p>
+</section>
+<section id="singapore-green-plan-2030" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="singapore-green-plan-2030"><span class="header-section-number">4.1.2</span> Singapore Green Plan 2030</h3>
+<p>To bridge the gap between this high-level strategy and on-the-ground reality, Singapore launched its specific tactical roadmap: <em>Singapore Green Plan 2030</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/ndvi_2_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+<p><img src="images/green_plan.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p style="text-align: left; color: gray; font-size: 0.8em;">
-  Normalised Difference Vegetation Index for City of Cape Town
+  Singapore Green Plan Pillars. <a href="https://www.greenplan.gov.sg/" style="color: gray; text-decoration: underline;">Source</a>
 </p>
-<p>We could get more clear results by pulling out certain areas where NDVI is greater than 0.2. It is important to note that July is winter in Cape Town, which is the rainy season. The bright yellow and green areas in the north are mostly farmlands. Crops like wheat grow rapidly during this time, resulting in high NDVI values.</p>
+<p>Under City in Nature pillar, the plan is far more granular than just “planting trees”. It explicitly targets the Urban Heat Island (UHI) effect through a multi-layered biophilic network. <a href="https://www.greenplan.gov.sg/targets/">The goal</a> is not just <strong>quantity</strong> (planting one million more trees), but <strong>accessibility and intensity</strong>: Increasing nature parks’ land area by over 50%, ensuring every household is within a 10-minute walk of a park, and finally adding 1000 ha of green spaces by 2035.</p>
+<p>This is where the challenge lies. Constrained by land scarcity, one can not just plant a forest on the city fringe. Nature must be woven into the existing, dense urban fabric: retrofitting rooftops, vertical walls, and road medians. This creates a complex spatial optimization problem: <strong>in a concrete jungle, where exactly should we insert green infrastructure to maximize thermal comfort?</strong> Simply finding available space is insufficient; the placement must account for complex micro climatic interactions, particularly wind flow and heat dispersion.</p>
+</section>
+</section>
+<section id="application" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="application"><span class="header-section-number">4.2</span> Application</h2>
+<p>To decode these invisible environmental factors, EO data becomes indispensable. Singapore has moved beyond standard meteorological monitoring to deploying advanced active remote sensing. Specifically, the URA is trialing <em>Wind LiDAR</em> technology to capture vertical wind information, which serves to improve the robustness of wind flow simulations.</p>
+<p>Crucially, this sensor data feeds into sophisticated simulation platforms like the <em>Integrated Environmental Modeller (IEM)</em> and the <em>Digital Urban Climate Twin (DUCT)</em>. By combining these environmental inputs with high-resolution 3D city models, planners simulate environmental factors to optimize the placement of green spaces for comfort and sustainability. This is a perfect example of the shift <strong>from reactive monitoring to preventative design</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/ndvi_2_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+<p><img src="images/IEM.avif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 <p style="text-align: left; color: gray; font-size: 0.8em;">
-  NDVI for City of Cape Town (only showing values above 0.2)
+  Integrated Environmental Modeller (IEM). Source: HDB
 </p>
-<p>In contrast, the southern areas (like the Cape Peninsula) show lower values. This is because the native “fynbos” vegetation consists of woody shrubs with small leaves, which naturally reflect less light than leafy crops. Also, the steep mountains cast long shadows in winter, which can lower the NDVI readings.</p>
+<p>While URA tools excel at district-level testing, optimizing green space in such a dense city requires a precise, algorithmic approach. <span class="citation" data-cites="jia2024">Jia et al. (<a href="references.html#ref-jia2024" role="doc-biblioref">2024</a>)</span>’s case study on Singapore’s green space offers a critical solution. They utilized integrated spatial modeling algorithms (<em>GWR coupled with DNN</em>) applied to multi-source remote sensing inputs (<em>Landsat LST and high-resolution structural data</em>). This method allows planners to quantify the relationship between urban morphology and cooling intensity. Thus, they can use these algorithms to identify key cooling drivers and optimize configurations. For example, the findings suggest that in high-density areas like the CBD, connecting fragmented green patches to improve connectivity and wind flow may be more effective than isolated plantings.</p>
+<p>However, algorithms alone cannot address the ethical dimension of planning. <span class="citation" data-cites="eugeniopappalardo2023">Eugenio Pappalardo, Zanetti, and Todeschi (<a href="references.html#ref-eugeniopappalardo2023" role="doc-biblioref">2023</a>)</span> used a climate justice framework in Italy to demonstrate that heat risk is rarely random. Instead, it spatially coincides with vulnerable demographics like the elderly and low-income households. While Singapore lacks historical redlining, significant thermal inequality exists between premium air-conditioned apartments and older, naturally ventilated public housing. Therefore, the proposed optimization model must incorporate <strong>social vulnerability</strong> layers to prioritize greening in these high-risk neighborhoods, ensuring thermal comfort is distributed equitably.</p>
 </section>
-<section id="texture" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="texture"><span class="header-section-number">3.1.2</span> Texture</h3>
-<p>Texture measures the spatial relationship and structural complexity between a pixel and its neighbors. It quantifies <strong>“smoothness”</strong> (high similarity between neighbors) versus <strong>“roughness”</strong> (high contrast).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/texture_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-<p style="text-align: left; color: gray; font-size: 0.8em;">
-  Texture for City of Cape Town
-</p>
-<p>In the Cape Town map, the colors are mixed together rather than separated into big blocks. The yellow pixels represent small, smooth spots, such as the middle of a field, where the color doesn’t change much. The blue and green pixels represent rough areas, which are usually the edges where one object ends and another begins. This speckled look shows that the whole image is full of small details and frequent changes, rather than large, empty spaces.</p>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>In my map, the “speckled” mix of yellow and blue suggests the texture is very fragmented. This is likely due to the <strong>small 3x3 window size</strong> used in the analysis.</p>
-<p>A small 3x3 window focuses on immediate neighbors, which makes it very sensitive to fine details and edges. The <strong>benefit</strong> is that it captures precise boundaries between objects. However, a <strong>limitation</strong> is that it picks up too much “noise”, resulting in a salt-and-pepper look. This makes it harder to identify broad, continuous zones (like a whole farm) compared to what a larger window (e.g., 7x7 or 15x15) might show.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="application" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="application"><span class="header-section-number">3.2</span> Application</h2>
-<section id="ratio-nbr" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="ratio-nbr"><span class="header-section-number">3.2.1</span> Ratio: NBR</h3>
-<p>In week1&amp;2, I explored how spectral indices like NDVI and red-edge ratios are crucial for monitoring vegetation health (LAI) and mitigating Urban Heat Islands. Additionally, a key application in disaster management is the <strong>Normalized Burn Ratio (NBR)</strong>, which contrasts Near-Infrared (NIR) and Shortwave Infrared (SWIR) bands to identify burnt areas. High NBR values reflect healthy vegetation, while low values point to bare ground or recent burns. <a href="https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/in-detail/normalized-burn-ratio">This website</a> introduces how NBR can be used to identify burn severity by comparing the difference between the pre-fire and post-fire NBR (dNBR or ∆NBR).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/NBR.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-<p style="text-align: left; color: gray; font-size: 0.8em;">
-  Comparison of the spectral response of healthy vegetation and burned areas. Source: U.S. Forest service.
-</p>
-</section>
-<section id="texture-distinguishing-slums" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="texture-distinguishing-slums"><span class="header-section-number">3.2.2</span> Texture: Distinguishing Slums</h3>
-<p>While spectral ratios are powerful, they are limited by the “same spectrum, different object” phenomenon. Relying solely on spectral data is insufficient for complex heterogeneous environments, such as <strong>distinguishing between formal and informal urban settlements (slums and shantytowns)</strong>. Studies by <span class="citation" data-cites="wang2019">Wang, Kuffer, and Pfeffer (<a href="references.html#ref-wang2019" role="doc-biblioref">2019</a>)</span> have successfully employed texture measures (GLCM) to distinguish slums from formal areas. They note that slums typically exhibit different structural patterns compared to planned housing. However, they point out a major challenge: the accuracy of the results depends heavily on the window size used. This mirrors the limitations I observed in my own practical results, where an arbitrary window size might lead to noise.</p>
-</section>
-</section>
-<section id="reflection" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
-<p>To be honest, I found this week’s focus on enhancement much more engaging and interesting than the technical corrections process. It felt like I was finally drawing out the hidden stories in the data rather than just fixing errors. The biggest realization for me was that spectral data (ratio) isn’t the whole truth. Texture analysis fascinated me because it visualized the “roughness” of the city, picking up details that NDVI missed.</p>
-<p>However, the practical side made me realize how much my final map depended on a simple, subjective choice: the window size. It makes me slightly nervous to think about this in a real policy context: if we pick the wrong window size, we could completely misclassify a vulnerable settlement. In the future, I hope to explore more about data fusion (combining NDVI and texture), hoping that combining methods might reduce this reliance on manual trial and error.</p>
+<section id="reflection" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">4.3</span> Reflection</h2>
+<p>Reflecting on Singapore’s strategy, I realized that the true power of EO data lies in simulation, not just observation. Reacting to environmental issues only after they become crises is not enough. Singapore challenges this by using IEM and DUCT to predict micro climates before construction begins. This shift from reactive monitoring to proactive prevention is a crucial lesson: EO data should be a design tool, not just a reporting tool.</p>
+<p>However, the discussion on climate justice really resonated with me. It highlighted a potential blind spot in technical optimization. We can use complex algorithms to find the perfect spot for a tree to lower the temperature by <span class="math inline">\(1^\circ C\)</span>, but if that spot is in a wealthy area that already has air-conditioning, is it truly “optimal”? I think social vulnerability should be treated as a variable just as important as other physical factors. True urban resilience is not just about building a cooler city, but building a fairer one.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-wang2019" class="csl-entry" role="listitem">
-Wang, Jiong, Monika Kuffer, and Karin Pfeffer. 2019. <span>“The Role of Spatial Heterogeneity in Detecting Urban Slums.”</span> <em>Computers, Environment and Urban Systems</em> 73 (January): 95–107. <a href="https://doi.org/10.1016/j.compenvurbsys.2018.08.007">https://doi.org/10.1016/j.compenvurbsys.2018.08.007</a>.
+<div id="ref-eugeniopappalardo2023" class="csl-entry" role="listitem">
+Eugenio Pappalardo, Salvatore, Carlo Zanetti, and Valeria Todeschi. 2023. <span>“Mapping Urban Heat Islands and Heat-Related Risk During Heat Waves from a Climate Justice Perspective: A Case Study in the Municipality of Padua (Italy) for Inclusive Adaptation Policies.”</span> <em>Landscape and Urban Planning</em> 238 (October): 104831. <a href="https://doi.org/10.1016/j.landurbplan.2023.104831">https://doi.org/10.1016/j.landurbplan.2023.104831</a>.
+</div>
+<div id="ref-jia2024" class="csl-entry" role="listitem">
+Jia, Siqi, Yuhong Wang, Tan Chun Liang, Qihao Weng, Cheolhee Yoo, Wu Chen, and Xiaoli Ding. 2024. <span>“Multiscale Estimation of the Cooling Effect of Urban Greenspace in Subtropical and Tropical Cities.”</span> <em>Urban Forestry &amp; Urban Greening</em> 98 (August): 128390. <a href="https://doi.org/10.1016/j.ufug.2024.128390">https://doi.org/10.1016/j.ufug.2024.128390</a>.
 </div>
 </div>
 </section>
@@ -704,13 +699,13 @@ Wang, Jiong, Monika Kuffer, and Karin Pfeffer. 2019. <span>“The Role of Spatia
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week2.html" class="pagination-link" aria-label="Sentinel-2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sentinel-2</span></span>
+      <a href="./week3.html" class="pagination-link" aria-label="Corrections">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week4&amp;5.html" class="pagination-link" aria-label="Policy: Singapore's Cooling Strategy">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy: Singapore’s Cooling Strategy</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

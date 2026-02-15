@@ -144,6 +144,90 @@
             "title": "The role of spatial heterogeneity in detecting urban slums",
             "type": "article-journal",
             "volume": "73"
+        },
+        {
+            "DOI": "10.1016/j.ufug.2024.128390",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S1618866724001882",
+            "author": [
+                {
+                    "family": "Jia",
+                    "given": "Siqi"
+                },
+                {
+                    "family": "Wang",
+                    "given": "Yuhong"
+                },
+                {
+                    "family": "Liang",
+                    "given": "Tan Chun"
+                },
+                {
+                    "family": "Weng",
+                    "given": "Qihao"
+                },
+                {
+                    "family": "Yoo",
+                    "given": "Cheolhee"
+                },
+                {
+                    "family": "Chen",
+                    "given": "Wu"
+                },
+                {
+                    "family": "Ding",
+                    "given": "Xiaoli"
+                }
+            ],
+            "container-title": "Urban Forestry & Urban Greening",
+            "id": "jia2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        8,
+                        1
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "page": "128390",
+            "title": "Multiscale estimation of the cooling effect of urban greenspace in subtropical and tropical cities",
+            "type": "article-journal",
+            "volume": "98"
+        },
+        {
+            "DOI": "10.1016/j.landurbplan.2023.104831",
+            "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0169204623001500",
+            "author": [
+                {
+                    "family": "Eugenio Pappalardo",
+                    "given": "Salvatore"
+                },
+                {
+                    "family": "Zanetti",
+                    "given": "Carlo"
+                },
+                {
+                    "family": "Todeschi",
+                    "given": "Valeria"
+                }
+            ],
+            "container-title": "Landscape and Urban Planning",
+            "id": "eugeniopappalardo2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        10
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "104831",
+            "title": "Mapping urban heat islands and heat-related risk during heat waves from a climate justice perspective: A case study in the municipality of Padua (Italy) for inclusive adaptation policies",
+            "title-short": "Mapping urban heat islands and heat-related risk during heat waves from a climate justice perspective",
+            "type": "article-journal",
+            "volume": "238"
         }
     ],
     "project_biblios": [

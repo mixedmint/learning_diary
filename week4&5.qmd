@@ -1,0 +1,59 @@
+---
+title: "Policy: Singapore's Cooling Strategy"
+---
+
+## Summary
+
+### URA Master Plan 2025
+
+The *Urban Redevelopment Authority (URA) Master Plan* is the statutory land use plan that guides Singapore’s development over the next 10 to 15 years. Unlike typical zoning maps, the 2025 Master Plan introduced a fascinating theme: Strengthening Urban Resilience. It explicitly sets out to create **"A Cool City in a Warming World"**, acknowledging that for a tropical island nation, rising temperatures aren't just an environmental issue, but also an existential one.
+
+![](images/future_tem.avif){fig-align="center" width="80%"}
+
+```{=html}
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+Under the worst-case scenario with high emissions, high temperatures will become a serious problem for Singapore. <a href="https://www.uradraftmasterplan.gov.sg/themes/strengthening-urban-resilience/a-cool-city-in-a-warming-world/" style="color: gray; text-decoration: underline;">Source</a>
+</p>
+```
+
+This sounds visionary, right? But here is the challenge: Singapore is already one of the densest cities on Earth. The Master Plan constantly faces a tension between **intensification** (building taller and denser to house people) and **livability** (keeping the city cool and green). Developers naturally want to maximize Gross Floor Area (GFA), which often means more concrete and heat retention. So, while the policy principles of spatial resilience are there, translating them into a concrete jungle without turning it into an oven is incredibly difficult.
+
+### Singapore Green Plan 2030
+
+To bridge the gap between this high-level strategy and on-the-ground reality, Singapore launched its specific tactical roadmap: *Singapore Green Plan 2030*.
+
+![](images/green_plan.webp){fig-align="center" width="80%"}
+
+```{=html}
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Singapore Green Plan Pillars. <a href="https://www.greenplan.gov.sg/" style="color: gray; text-decoration: underline;">Source</a>
+</p>
+```
+
+Under City in Nature pillar, the plan is far more granular than just "planting trees". It explicitly targets the Urban Heat Island (UHI) effect through a multi-layered biophilic network. [The goal](https://www.greenplan.gov.sg/targets/) is not just **quantity** (planting one million more trees), but **accessibility and intensity**: Increasing nature parks’ land area by over 50%, ensuring every household is within a 10-minute walk of a park, and finally adding 1000 ha of green spaces by 2035.
+
+This is where the challenge lies. Constrained by land scarcity, one can not just plant a forest on the city fringe. Nature must be woven into the existing, dense urban fabric: retrofitting rooftops, vertical walls, and road medians. This creates a complex spatial optimization problem: **in a concrete jungle, where exactly should we insert green infrastructure to maximize thermal comfort?** Simply finding available space is insufficient; the placement must account for complex micro climatic interactions, particularly wind flow and heat dispersion.
+
+## Application
+
+To decode these invisible environmental factors, EO data becomes indispensable. Singapore has moved beyond standard meteorological monitoring to deploying advanced active remote sensing. Specifically, the URA is trialing *Wind LiDAR* technology to capture vertical wind information, which serves to improve the robustness of wind flow simulations.
+
+Crucially, this sensor data feeds into sophisticated simulation platforms like the *Integrated Environmental Modeller (IEM)* and the *Digital Urban Climate Twin (DUCT)*. By combining these environmental inputs with high-resolution 3D city models, planners simulate environmental factors to optimize the placement of green spaces for comfort and sustainability. This is a perfect example of the shift **from reactive monitoring to preventative design**.
+
+![](images/IEM.avif){fig-align="center" width="80%"}
+
+```{=html}
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Integrated Environmental Modeller (IEM). Source: HDB
+</p>
+```
+
+While URA tools excel at district-level testing, optimizing green space in such a dense city requires a precise, algorithmic approach. @jia2024’s case study on Singapore’s green space offers a critical solution. They utilized integrated spatial modeling algorithms (*GWR coupled with DNN*) applied to multi-source remote sensing inputs (*Landsat LST and high-resolution structural data*). This method allows planners to quantify the relationship between urban morphology and cooling intensity. Thus, they can use these algorithms to identify key cooling drivers and optimize configurations. For example, the findings suggest that in high-density areas like the CBD, connecting fragmented green patches to improve connectivity and wind flow may be more effective than isolated plantings.
+
+However, algorithms alone cannot address the ethical dimension of planning. @eugeniopappalardo2023 used a climate justice framework in Italy to demonstrate that heat risk is rarely random. Instead, it spatially coincides with vulnerable demographics like the elderly and low-income households. While Singapore lacks historical redlining, significant thermal inequality exists between premium air-conditioned apartments and older, naturally ventilated public housing. Therefore, the proposed optimization model must incorporate **social vulnerability** layers to prioritize greening in these high-risk neighborhoods, ensuring thermal comfort is distributed equitably.
+
+## Reflection
+
+Reflecting on Singapore’s strategy, I realized that the true power of EO data lies in simulation, not just observation. Reacting to environmental issues only after they become crises is not enough. Singapore challenges this by using IEM and DUCT to predict micro climates before construction begins. This shift from reactive monitoring to proactive prevention is a crucial lesson: EO data should be a design tool, not just a reporting tool.
+
+However, the discussion on climate justice really resonated with me. It highlighted a potential blind spot in technical optimization. We can use complex algorithms to find the perfect spot for a tree to lower the temperature by $1^\circ C$, but if that spot is in a wealthy area that already has air-conditioning, is it truly "optimal"? I think social vulnerability should be treated as a variable just as important as other physical factors. True urban resilience is not just about building a cooler city, but building a fairer one.

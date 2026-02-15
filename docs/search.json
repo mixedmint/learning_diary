@@ -44,7 +44,7 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Addabbo, Pia, Mariano Focareta, Salvo Marcuccio, Claudio Votto, and\nSilvia Liberata Ullo. 2016. “Contribution of Sentinel-2 Data for\nApplications in Vegetation Monitoring.” ACTA IMEKO 5\n(2): 44. https://doi.org/10.21014/acta_imeko.v5i2.352.\n\n\nSun, Yuanheng, Qiming Qin, Huazhong Ren, Tianyuan Zhang, and Shanshan\nChen. 2020. “Red-Edge Band Vegetation Indices for Leaf Area Index\nEstimation from Sentinel-2/MSI Imagery.” IEEE Transactions on\nGeoscience and Remote Sensing 58 (2): 826–40. https://doi.org/10.1109/TGRS.2019.2940826.\n\n\nWang, Jiong, Monika Kuffer, and Karin Pfeffer. 2019. “The Role of\nSpatial Heterogeneity in Detecting Urban Slums.” Computers,\nEnvironment and Urban Systems 73 (January): 95–107. https://doi.org/10.1016/j.compenvurbsys.2018.08.007.",
+    "text": "Addabbo, Pia, Mariano Focareta, Salvo Marcuccio, Claudio Votto, and\nSilvia Liberata Ullo. 2016. “Contribution of Sentinel-2 Data for\nApplications in Vegetation Monitoring.” ACTA IMEKO 5\n(2): 44. https://doi.org/10.21014/acta_imeko.v5i2.352.\n\n\nEugenio Pappalardo, Salvatore, Carlo Zanetti, and Valeria Todeschi.\n2023. “Mapping Urban Heat Islands and Heat-Related Risk During\nHeat Waves from a Climate Justice Perspective: A Case Study in the\nMunicipality of Padua (Italy) for Inclusive Adaptation Policies.”\nLandscape and Urban Planning 238 (October): 104831. https://doi.org/10.1016/j.landurbplan.2023.104831.\n\n\nJia, Siqi, Yuhong Wang, Tan Chun Liang, Qihao Weng, Cheolhee Yoo, Wu\nChen, and Xiaoli Ding. 2024. “Multiscale Estimation of the Cooling\nEffect of Urban Greenspace in Subtropical and Tropical Cities.”\nUrban Forestry & Urban Greening 98 (August): 128390. https://doi.org/10.1016/j.ufug.2024.128390.\n\n\nSun, Yuanheng, Qiming Qin, Huazhong Ren, Tianyuan Zhang, and Shanshan\nChen. 2020. “Red-Edge Band Vegetation Indices for Leaf Area Index\nEstimation from Sentinel-2/MSI Imagery.” IEEE Transactions on\nGeoscience and Remote Sensing 58 (2): 826–40. https://doi.org/10.1109/TGRS.2019.2940826.\n\n\nWang, Jiong, Monika Kuffer, and Karin Pfeffer. 2019. “The Role of\nSpatial Heterogeneity in Detecting Urban Slums.” Computers,\nEnvironment and Urban Systems 73 (January): 95–107. https://doi.org/10.1016/j.compenvurbsys.2018.08.007.",
     "crumbs": [
       "References"
     ]
@@ -157,6 +157,66 @@
     "text": "3.3 Reflection\nTo be honest, I found this week’s focus on enhancement much more engaging and interesting than the technical corrections process. It felt like I was finally drawing out the hidden stories in the data rather than just fixing errors. The biggest realization for me was that spectral data (ratio) isn’t the whole truth. Texture analysis fascinated me because it visualized the “roughness” of the city, picking up details that NDVI missed.\nHowever, the practical side made me realize how much my final map depended on a simple, subjective choice: the window size. It makes me slightly nervous to think about this in a real policy context: if we pick the wrong window size, we could completely misclassify a vulnerable settlement. In the future, I hope to explore more about data fusion (combining NDVI and texture), hoping that combining methods might reduce this reliance on manual trial and error.\n\n\n\n\nWang, Jiong, Monika Kuffer, and Karin Pfeffer. 2019. “The Role of Spatial Heterogeneity in Detecting Urban Slums.” Computers, Environment and Urban Systems 73 (January): 95–107. https://doi.org/10.1016/j.compenvurbsys.2018.08.007.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week4&5.html",
+    "href": "week4&5.html",
+    "title": "4  Policy: Singapore’s Cooling Strategy",
+    "section": "",
+    "text": "4.1 Summary",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy: Singapore's Cooling Strategy</span>"
+    ]
+  },
+  {
+    "objectID": "week4&5.html#summary-ura-master-plan-2025-and-green-plan-2030",
+    "href": "week4&5.html#summary-ura-master-plan-2025-and-green-plan-2030",
+    "title": "4  Policy: Singapore’s Cooling Strategy",
+    "section": "",
+    "text": "4.1.1 URA Master Plan 2025\nThe Urban Redevelopment Authority (URA) Master Plan is the statutory land use plan that guides Singapore’s development over the next 10 to 15 years. Unlike typical zoning maps that just tell you where to build houses, the 2025 Master Plan introduced a fascinating theme: Strengthening Urban Resilience. It explicitly sets out to create “A Cool City in a Warming World”, acknowledging that for a tropical island nation, rising temperatures aren’t just an environmental issue, but also an existential one.\nThis sounds visionary, right? But here is the challenge: Singapore is already one of the densest cities on Earth. The Master Plan constantly faces a tension between intensification (building taller and denser to house people) and livability (keeping the city cool and green). Developers naturally want to maximize Gross Floor Area (GFA), which often means more concrete and heat retention. So, while the policy principles of spatial resilience are there, translating them into a concrete jungle without turning it into an oven is incredibly difficult.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy: Singapore's Cooling Strategy</span>"
+    ]
+  },
+  {
+    "objectID": "week4&5.html#singapore-green-plan-2030",
+    "href": "week4&5.html#singapore-green-plan-2030",
+    "title": "4  Policy: Singapore’s Cooling Strategy",
+    "section": "4.2 Singapore Green Plan 2030",
+    "text": "4.2 Singapore Green Plan 2030\nTo bridge the gap between this high-level strategy and on-the-ground reality, Singapore launched its specific tactical roadmap: Singapore Green Plan 2030.\n\n\n\n\n\n\n  Singapore Green Plan Pillars. Source\n\nUnder City in Nature pillar, the plan is far more granular than just “planting trees”. It explicitly targets the Urban Heat Island (UHI) effect through a multi-layered biophilic network. The goal is not just quantity (planting one million more trees), but accessibility and intensity: Increasing nature parks’ land area by over 50%, ensuring every household is within a 10-minute walk of a park, and finally adding 1000 ha of green spaces by 2035.\nThis is where the challenge lies. Constrained by land scarcity, one can not just plant a forest on the city fringe. Nature must be woven into the existing, dense urban fabric: retrofitting rooftops, vertical walls, and road medians. This creates a complex spatial optimization problem: in a concrete jungle, where exactly should we insert green infrastructure to maximize thermal comfort?",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy: Singapore's Cooling Strategy</span>"
+    ]
+  },
+  {
+    "objectID": "week4&5.html#application",
+    "href": "week4&5.html#application",
+    "title": "4  Policy: Singapore’s Cooling Strategy",
+    "section": "4.2 Application",
+    "text": "4.2 Application\nTo decode these invisible environmental factors, EO data becomes indispensable. Singapore has moved beyond standard meteorological monitoring to deploying advanced active remote sensing. Specifically, the URA is trialing Wind LiDAR technology to capture vertical wind information, which serves to improve the robustness of wind flow simulations.\nCrucially, this sensor data feeds into sophisticated simulation platforms like the Integrated Environmental Modeller (IEM) and the Digital Urban Climate Twin (DUCT). By combining these environmental inputs with high-resolution 3D city models, planners simulate environmental factors to optimize the placement of green spaces for comfort and sustainability. This is a perfect example of the shift from reactive monitoring to preventative design.\n\n\n\n\n\n\n  Integrated Environmental Modeller (IEM). Source: HDB\n\nWhile URA tools excel at district-level testing, optimizing green space in such a dense city requires a precise, algorithmic approach. Jia et al. (2024)’s case study on Singapore’s green space offers a critical solution. They utilized integrated spatial modeling algorithms (GWR coupled with DNN) applied to multi-source remote sensing inputs (Landsat LST and high-resolution structural data). This method allows planners to quantify the relationship between urban morphology and cooling intensity. Thus, they can use these algorithms to identify key cooling drivers and optimize configurations. For example, the findings suggest that in high-density areas like the CBD, connecting fragmented green patches to improve connectivity and wind flow may be more effective than isolated plantings.\nHowever, algorithms alone cannot address the ethical dimension of planning. Eugenio Pappalardo, Zanetti, and Todeschi (2023) used a climate justice framework in Italy to demonstrate that heat risk is rarely random. Instead, it spatially coincides with vulnerable demographics like the elderly and low-income households. While Singapore lacks historical redlining, significant thermal inequality exists between premium air-conditioned apartments and older, naturally ventilated public housing. Therefore, the proposed optimization model must incorporate social vulnerability layers to prioritize greening in these high-risk neighborhoods, ensuring thermal comfort is distributed equitably.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy: Singapore's Cooling Strategy</span>"
+    ]
+  },
+  {
+    "objectID": "week4&5.html#summary",
+    "href": "week4&5.html#summary",
+    "title": "4  Policy: Singapore’s Cooling Strategy",
+    "section": "",
+    "text": "4.1.1 URA Master Plan 2025\nThe Urban Redevelopment Authority (URA) Master Plan is the statutory land use plan that guides Singapore’s development over the next 10 to 15 years. Unlike typical zoning maps, the 2025 Master Plan introduced a fascinating theme: Strengthening Urban Resilience. It explicitly sets out to create “A Cool City in a Warming World”, acknowledging that for a tropical island nation, rising temperatures aren’t just an environmental issue, but also an existential one.\n\n\n\n\n\n\nUnder the worst-case scenario with high emissions, high temperatures will become a serious problem for Singapore. Source\n\nThis sounds visionary, right? But here is the challenge: Singapore is already one of the densest cities on Earth. The Master Plan constantly faces a tension between intensification (building taller and denser to house people) and livability (keeping the city cool and green). Developers naturally want to maximize Gross Floor Area (GFA), which often means more concrete and heat retention. So, while the policy principles of spatial resilience are there, translating them into a concrete jungle without turning it into an oven is incredibly difficult.\n\n\n4.1.2 Singapore Green Plan 2030\nTo bridge the gap between this high-level strategy and on-the-ground reality, Singapore launched its specific tactical roadmap: Singapore Green Plan 2030.\n\n\n\n\n\n\n  Singapore Green Plan Pillars. Source\n\nUnder City in Nature pillar, the plan is far more granular than just “planting trees”. It explicitly targets the Urban Heat Island (UHI) effect through a multi-layered biophilic network. The goal is not just quantity (planting one million more trees), but accessibility and intensity: Increasing nature parks’ land area by over 50%, ensuring every household is within a 10-minute walk of a park, and finally adding 1000 ha of green spaces by 2035.\nThis is where the challenge lies. Constrained by land scarcity, one can not just plant a forest on the city fringe. Nature must be woven into the existing, dense urban fabric: retrofitting rooftops, vertical walls, and road medians. This creates a complex spatial optimization problem: in a concrete jungle, where exactly should we insert green infrastructure to maximize thermal comfort? Simply finding available space is insufficient; the placement must account for complex micro climatic interactions, particularly wind flow and heat dispersion.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy: Singapore's Cooling Strategy</span>"
+    ]
+  },
+  {
+    "objectID": "week4&5.html#reflection",
+    "href": "week4&5.html#reflection",
+    "title": "4  Policy: Singapore’s Cooling Strategy",
+    "section": "4.3 Reflection",
+    "text": "4.3 Reflection\nReflecting on Singapore’s strategy, I realized that the true power of EO data lies in simulation, not just observation. Reacting to environmental issues only after they become crises is not enough. Singapore challenges this by using IEM and DUCT to predict micro climates before construction begins. This shift from reactive monitoring to proactive prevention is a crucial lesson: EO data should be a design tool, not just a reporting tool.\nHowever, the discussion on climate justice really resonated with me. It highlighted a potential blind spot in technical optimization. We can use complex algorithms to find the perfect spot for a tree to lower the temperature by \\(1^\\circ C\\), but if that spot is in a wealthy area that already has air-conditioning, is it truly “optimal”? I think social vulnerability should be treated as a variable just as important as other physical factors. True urban resilience is not just about building a cooler city, but building a fairer one.\n\n\n\n\nEugenio Pappalardo, Salvatore, Carlo Zanetti, and Valeria Todeschi. 2023. “Mapping Urban Heat Islands and Heat-Related Risk During Heat Waves from a Climate Justice Perspective: A Case Study in the Municipality of Padua (Italy) for Inclusive Adaptation Policies.” Landscape and Urban Planning 238 (October): 104831. https://doi.org/10.1016/j.landurbplan.2023.104831.\n\n\nJia, Siqi, Yuhong Wang, Tan Chun Liang, Qihao Weng, Cheolhee Yoo, Wu Chen, and Xiaoli Ding. 2024. “Multiscale Estimation of the Cooling Effect of Urban Greenspace in Subtropical and Tropical Cities.” Urban Forestry & Urban Greening 98 (August): 128390. https://doi.org/10.1016/j.ufug.2024.128390.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy: Singapore's Cooling Strategy</span>"
     ]
   }
 ]
