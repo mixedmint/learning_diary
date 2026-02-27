@@ -54,8 +54,8 @@ Texture measures the spatial relationship and structural complexity between a pi
 
 In the Cape Town map, the colors are mixed together rather than separated into big blocks. The yellow pixels represent small, smooth spots, such as the middle of a field, where the color doesn't change much. The blue and green pixels represent rough areas, which are usually the edges where one object ends and another begins. This speckled look shows that the whole image is full of small details and frequent changes, rather than large, empty spaces.
 
-::: {.callout-tip appearance="simple"}
-In my map, the "speckled" mix of yellow and blue suggests the texture is very fragmented. This is likely due to the **small 3x3 window size** used in the analysis.
+::: {.callout-tip appearance="simple" icon="false"}
+In my map, the speckled mix of yellow and blue suggests the texture is very fragmented. This is likely due to the **small 3x3 window size** used in the analysis.
 
 A small 3x3 window focuses on immediate neighbors, which makes it very sensitive to fine details and edges. The **benefit** is that it captures precise boundaries between objects. However, a **limitation** is that it picks up too much "noise", resulting in a salt-and-pepper look. This makes it harder to identify broad, continuous zones (like a whole farm) compared to what a larger window (e.g., 7x7 or 15x15) might show.
 :::
