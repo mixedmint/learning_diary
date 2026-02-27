@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -200,6 +220,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#the-set-up-of-gee" id="toc-the-set-up-of-gee" class="nav-link" data-scroll-target="#the-set-up-of-gee"><span class="header-section-number">5.1.1</span> The Set Up of GEE</a></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">5.1.2</span> Functions</a></li>
   </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">5.2</span> Application</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">5.3</span> Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -227,26 +249,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="summary" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary</h2>
-<p>This week we introduced the Google Earth Engine (GEE), which is a geographical processing service and permits geospatial analysis at scale. Much more powerful than SNAP, isn’t it? The basic concepts and functions of GEE will be demonstrated in this section.</p>
 <section id="the-set-up-of-gee" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="the-set-up-of-gee"><span class="header-section-number">5.1.1</span> The Set Up of GEE</h3>
 <section id="client-side-vs.-server-side" class="level4" data-number="5.1.1.1">
 <h4 data-number="5.1.1.1" class="anchored" data-anchor-id="client-side-vs.-server-side"><span class="header-section-number">5.1.1.1</span> Client side vs.&nbsp;Server side</h4>
-<p>One of GEE’s biggest advantages lies in its massive server side computational power and cloud-hosted data catalog, which allow users to perform planetary-scale geospatial analysis within seconds without downloading any data. However, the strict separation between the client side environment and server side objects also introduces a steep learning curve, such as the necessity of using <code>.map()</code> instead of traditional for loops for image collections.</p>
+<p>One of GEE’s biggest advantages lies in its massive server-side computational power and cloud-hosted data catalog, which allow users to perform planetary-scale geospatial analysis within seconds without downloading any data. However, the strict separation between the client-side environment and server-side objects also introduces a steep learning curve, such as the necessity of using <code>.map()</code> instead of traditional for loops for image collections.</p>
 </section>
 <section id="scale" class="level4" data-number="5.1.1.2">
 <h4 data-number="5.1.1.2" class="anchored" data-anchor-id="scale"><span class="header-section-number">5.1.1.2</span> Scale</h4>
-<p>Unlike traditional GIS software, GEE’s resolution is dynamically determined by the output rather than the input. During analysis, GEE aggregates images to fit a 256x256 grid. It selects the image pyramid level closest to the specified scale and resamples the data, utilizing nearest neighbor by default. This output-driven mechanism ensures fast processing and visualization for planetary-scale datasets.</p>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>An interesting observation from the scale example is that querying a pixel at a 10m scale yields the exact same value as the 30m scale. This occurs because GEE cannot exceed <strong>the sensor’s native resolution</strong> (e.g.&nbsp;30m for Landsat 8). Instead, it simply duplicates the base pixel using default nearest neighbor resampling.</p>
-</div>
-</div>
-</div>
+<p>Unlike traditional GIS, GEE’s resolution is dynamically output-driven. It aggregates images using a 256x256 pyramid grid and default nearest-neighbor resampling for rapid processing. Importantly, GEE <strong>cannot exceed a sensor’s native resolution</strong>: querying 30m Landsat data at a 10m scale simply duplicates the base 30m pixel.</p>
 </section>
 </section>
 <section id="functions" class="level3" data-number="5.1.2">
@@ -254,13 +265,112 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="filter" class="level4" data-number="5.1.2.1">
 <h4 data-number="5.1.2.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">5.1.2.1</span> Filter</h4>
 <p>Images (raster data) could be filtered by date/location (specified path and row)/boundary/polygon. Features (geometries with attributes) can also be filtered by specific attributes.</p>
+<p>For example:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// filter by attributes (Delhi in India)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> Delhi <span class="op">=</span> ee<span class="op">.</span><span class="fu">FeatureCollection</span>(<span class="st">'users/path/india'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(<span class="st">'GID_1 == "IND.25_1"'</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-
-
+</section>
+<section id="reducer" class="level4" data-number="5.1.2.2">
+<h4 data-number="5.1.2.2" class="anchored" data-anchor-id="reducer"><span class="header-section-number">5.1.2.2</span> Reducer</h4>
+<p>A GEE reducer computes statistics to aggregate massive datasets. It efficiently summarizes multiple images or regional pixels into a single metric, such as a median or mean.</p>
+<p>There are three different types of reducer:</p>
+<ol type="1">
+<li><p><strong>Reducing an ImageCollection</strong></p>
+<p>Condensing a stack of images over time into a single image by using <code>ee.Reducer</code>.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Is the median the best image to make?</em></p>
+<p>While the median method efficiently <strong>suppresses outliers and generally removes clouds</strong>, it <strong>struggles with dense haze</strong> and <strong>fails</strong> when only <strong>limited cloud-contaminated images</strong> are available. It also inaccurately represents thermal data. Therefore, researchers should prefer alternatives like the Min method for robust haze removal or the Max method for thermal infrared compositing <span class="citation" data-cites="xu2025">(<a href="references.html#ref-xu2025" role="doc-biblioref">Xu et al. 2025</a>)</span>.</p>
+</div>
+</div>
+</div></li>
+<li><p><strong>Reducing by Region</strong></p>
+<p>All pixels within a geographic boundary (polygon) are condensed into one or a few statistical values using <code>reduceRegion()</code> or <code>reduceRegions()</code>, similar to zonal statistics in QGIS.</p></li>
+<li><p><strong>Reducing by Neighborhood</strong></p>
+<p>It applies a sliding kernel to update each central pixel based on its surrounding neighbors by using <code>reduceNeighborhood()</code>, commonly used for texture analysis.</p></li>
+</ol>
+</section>
+<section id="clip" class="level4" data-number="5.1.2.3">
+<h4 data-number="5.1.2.3" class="anchored" data-anchor-id="clip"><span class="header-section-number">5.1.2.3</span> Clip</h4>
+<p>After pre-processing of images, we could clip them to our study area.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clip.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Clipped image of Delhi in India.
+</p>
+</section>
+<section id="texture-measures-pca-and-band-math" class="level4" data-number="5.1.2.4">
+<h4 data-number="5.1.2.4" class="anchored" data-anchor-id="texture-measures-pca-and-band-math"><span class="header-section-number">5.1.2.4</span> <strong>Texture measures, PCA and Band Math</strong></h4>
+<p>Like in R, we can also use GEE to do some geospatial analysis. Texture measures can be conducted by <code>glcmTexture()</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/glcm.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  GLCM texture map of Delhi.
+</p>
+<p>PCA analysis is relatively complex in GEE. Unlike R, GEE lacks a simple built-in PCA tool. Users must manually perform complex math using Arrays, highlighting a limitation in its current analytical flexibility.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pca1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  The first principal component of Delhi from PCA.
+</p>
+<p>GEE can calculate indices like NDVI via <code>normalizedDifference()</code> quickly and simply.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> NDVIs <span class="op">=</span> clip<span class="op">.</span><span class="fu">normalizedDifference</span>([SR_B5<span class="op">,</span> SR_B4])<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ndvi.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  NDVI analysis of Delhi
+</p>
 </section>
 </section>
+</section>
+<section id="application" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="application"><span class="header-section-number">5.2</span> Application</h2>
+<p>The applications for Google Earth Engine are truly extensive. By removing the need to download massive raster datasets and process them locally, GEE has fundamentally shifted remote sensing towards cloud-based, planetary-scale analysis. It has dramatically expanded the scale, speed, and creativity of what researchers can achieve.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/GEEapplication.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Google Earth Engine Applications. Source: <a href="https://ieeexplore.ieee.org/document/9184118" style="color: gray; text-decoration: underline;">IEEE Xplore</a>
+</p>
+<p>One prominent example of this planetary-scale capability is the <a href="https://human-settlement.emergency.copernicus.eu/">Global Human Settlement Layer (GHSL)</a>. While developed by the European Commission’s Copernicus programme, it famously leveraged GEE’s computational power to process petabytes of historical satellite imagery, mapping urban expansion across the globe in ways that would take months on a traditional desktop GIS.</p>
+<p>On a local level, GEE excels in mapping complex urban environments. In my Delhi practicals, separating infrastructure, informal settlements, and bare soil was difficult due to severe landscape fragmentation. However, combining spectral indices with spatial metrics in GEE efficiently solves this. As <span class="citation" data-cites="chen2022a">Chen et al. (<a href="references.html#ref-chen2022a" role="doc-biblioref">2022</a>)</span> demonstrated, while NDVI measures vegetation, adding Grey Level Co-occurrence Matrix (GLCM) textures better captures fine urban structures. Using <code>glcmTexture()</code> to quantify spatial heterogeneity significantly improves land-cover classification accuracy in such heterogeneous cities.</p>
+<p>Despite these strengths, a major limitation of GEE is its inability to natively process 3D point cloud data like LiDAR. Understanding modern cities requires monitoring 3D urban morphology (e.g., building heights and volumetric density), yet GEE cannot directly ingest .las or .laz files. As <span class="citation" data-cites="bao2023">Bao et al. (<a href="references.html#ref-bao2023" role="doc-biblioref">2023</a>)</span> noted, researchers must pre-process LiDAR into 2D rasters (like DSMs) using local software before uploading them to GEE. This reliance on external processing breaks the seamless cloud workflow. Future advancements must overcome this bottleneck, potentially by integrating Cloud Optimized Point Clouds (COPC) natively or leveraging deep learning to extract 3D metrics directly from 2D composites.</p>
+</section>
+<section id="reflection" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">5.3</span> Reflection</h2>
+<p>To be honest, diving into Google Earth Engine this week was exciting but intimidating. Moving from familiar, click-based desktop GIS to writing server-side JavaScript felt like a huge leap. However, my “wow“ moment came when generating NDVI and GLCM maps for Delhi in seconds, without downloading massive datasets. It made me realize the future of spatial analysis relies on smart, cloud-based code rather than managing local hard drives.</p>
+<p>GEE isn’t perfect, though. It is quite frustrating that it cannot natively process 3D LiDAR point clouds. Since understanding building heights and urban volumes is crucial for modern city planning, this feels like a major roadblock. But this limitation got me thinking: how can we creatively work around it? In future projects, I want to explore fusing Sentinel-1 SAR backscatter with Sentinel-2 optical data to see if we can use them as a proxy for estimating urban volumes. Ultimately, despite its steep learning curve and a few quirks, GEE has opened up exciting new avenues for my work, giving me the confidence to tackle planetary-scale datasets.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-bao2023" class="csl-entry" role="listitem">
+Bao, Junfan, Ningning Zhu, Ruibo Chen, Bin Cui, Wenmei Li, and Bisheng Yang. 2023. <span>“Estimation of Forest Height Using Google Earth Engine Machine Learning Combined with Single-Baseline TerraSAR-X/TanDEM-X and LiDAR.”</span> <em>Forests</em> 14 (10). <a href="https://doi.org/10.3390/f14101953">https://doi.org/10.3390/f14101953</a>.
+</div>
+<div id="ref-chen2022a" class="csl-entry" role="listitem">
+Chen, Shudan, Fan Lei, Shengguang Dong, Zhuo Zang, and Meng Zhang. 2022. <span>“Land Use/Land Cover Mapping Using Deep Neural Network and Sentinel Image Dataset Based on Google Earth Engine in a Heavily Urbanized Area, China.”</span> <em>Geocarto International</em> 37 (27): 16951–72. <a href="https://doi.org/10.1080/10106049.2022.2120551">https://doi.org/10.1080/10106049.2022.2120551</a>.
+</div>
+<div id="ref-xu2025" class="csl-entry" role="listitem">
+Xu, Hanqiu, Guifen Su, Chunqiang Li, and Wenhui Deng. 2025. <span>“The Differences, Advantages, and Disadvantages of Various Image Compositing Methods on the Google Earth Engine Platform: An Exploration.”</span> <em>Geo-Spatial Information Science</em> 0 (0): 1–28. <a href="https://doi.org/10.1080/10095020.2025.2542534">https://doi.org/10.1080/10095020.2025.2542534</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

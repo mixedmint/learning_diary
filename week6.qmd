@@ -4,21 +4,15 @@ title: "Google Earth Engine"
 
 ## Summary
 
-This week we introduced the Google Earth Engine (GEE), which is a geographical processing service and permits geospatial analysis at scale. Much more powerful than SNAP, isn't it? The basic concepts and functions of GEE will be demonstrated in this section.
-
 ### The Set Up of GEE
 
 #### Client side vs. Server side
 
-One of GEE's biggest advantages lies in its massive server side computational power and cloud-hosted data catalog, which allow users to perform planetary-scale geospatial analysis within seconds without downloading any data. However, the strict separation between the client side environment and server side objects also introduces a steep learning curve, such as the necessity of using `.map()` instead of traditional for loops for image collections.
+One of GEE's biggest advantages lies in its massive server-side computational power and cloud-hosted data catalog, which allow users to perform planetary-scale geospatial analysis within seconds without downloading any data. However, the strict separation between the client-side environment and server-side objects also introduces a steep learning curve, such as the necessity of using `.map()` instead of traditional for loops for image collections.
 
 #### Scale
 
-Unlike traditional GIS software, GEE's resolution is dynamically determined by the output rather than the input. During analysis, GEE aggregates images to fit a 256x256 grid. It selects the image pyramid level closest to the specified scale and resamples the data, utilizing nearest neighbor by default. This output-driven mechanism ensures fast processing and visualization for planetary-scale datasets.
-
-::: {.callout-tip appearance="simple" icon="false"}
-An interesting observation from the scale example is that querying a pixel at a 10m scale yields the exact same value as the 30m scale. This occurs because GEE cannot exceed **the sensor's native resolution** (e.g. 30m for Landsat 8). Instead, it simply duplicates the base pixel using default nearest neighbor resampling.
-:::
+Unlike traditional GIS, GEE's resolution is dynamically output-driven. It aggregates images using a 256x256 pyramid grid and default nearest-neighbor resampling for rapid processing. Importantly, GEE **cannot exceed a sensor's native resolution**: querying 30m Landsat data at a 10m scale simply duplicates the base 30m pixel.
 
 ### Functions
 
@@ -34,4 +28,98 @@ var Delhi = ee.FeatureCollection('users/path/india')
   .filter('GID_1 == "IND.25_1"');
 ```
 
-#### 
+#### Reducer
+
+A GEE reducer computes statistics to aggregate massive datasets. It efficiently summarizes multiple images or regional pixels into a single metric, such as a median or mean.
+
+There are three different types of reducer:
+
+1.  **Reducing an ImageCollection**
+
+    Condensing a stack of images over time into a single image by using `ee.Reducer`.
+
+    ::: {.callout-tip appearance="simple" icon="false"}
+    *Is the median the best image to make?*
+
+    While the median method efficiently **suppresses outliers and generally removes clouds**, it **struggles with dense haze** and **fails** when only **limited cloud-contaminated images** are available. It also inaccurately represents thermal data. Therefore, researchers should prefer alternatives like the Min method for robust haze removal or the Max method for thermal infrared compositing [@xu2025].
+    :::
+
+2.  **Reducing by Region**
+
+    All pixels within a geographic boundary (polygon) are condensed into one or a few statistical values using `reduceRegion()` or `reduceRegions()`, similar to zonal statistics in QGIS.
+
+3.  **Reducing by Neighborhood**
+
+    It applies a sliding kernel to update each central pixel based on its surrounding neighbors by using `reduceNeighborhood()`, commonly used for texture analysis.
+
+#### Clip
+
+After pre-processing of images, we could clip them to our study area.
+
+![](images/clip.png){fig-align="center" width="80%"}
+
+```{=html}
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Clipped image of Delhi in India.
+</p>
+```
+
+#### **Texture measures, PCA and Band Math**
+
+Like in R, we can also use GEE to do some geospatial analysis. Texture measures can be conducted by `glcmTexture()`.
+
+![](images/glcm.png){fig-align="center" width="80%"}
+
+```{=html}
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  GLCM texture map of Delhi.
+</p>
+```
+
+PCA analysis is relatively complex in GEE. Unlike R, GEE lacks a simple built-in PCA tool. Users must manually perform complex math using Arrays, highlighting a limitation in its current analytical flexibility.
+
+![](images/pca1.png){fig-align="center" width="80%"}
+
+```{=html}
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  The first principal component of Delhi from PCA.
+</p>
+```
+
+GEE can calculate indices like NDVI via `normalizedDifference()` quickly and simply.
+
+``` javascript
+var NDVIs = clip.normalizedDifference([SR_B5, SR_B4]);
+```
+
+![](images/ndvi.png){fig-align="center" width="80%"}
+
+```{=html}
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  NDVI analysis of Delhi
+</p>
+```
+
+## Application
+
+The applications for Google Earth Engine are truly extensive. By removing the need to download massive raster datasets and process them locally, GEE has fundamentally shifted remote sensing towards cloud-based, planetary-scale analysis. It has dramatically expanded the scale, speed, and creativity of what researchers can achieve.
+
+![](images/GEEapplication.gif){fig-align="center" width="80%"}
+
+```{=html}
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Google Earth Engine Applications. Source: <a href="https://ieeexplore.ieee.org/document/9184118" style="color: gray; text-decoration: underline;">IEEE Xplore</a>
+</p>
+```
+
+One prominent example of this planetary-scale capability is the [Global Human Settlement Layer (GHSL)](https://human-settlement.emergency.copernicus.eu/). While developed by the European Commission’s Copernicus programme, it famously leveraged GEE's computational power to process petabytes of historical satellite imagery, mapping urban expansion across the globe in ways that would take months on a traditional desktop GIS.
+
+On a local level, GEE excels in mapping complex urban environments. In my Delhi practicals, separating infrastructure, informal settlements, and bare soil was difficult due to severe landscape fragmentation. However, combining spectral indices with spatial metrics in GEE efficiently solves this. As @chen2022a demonstrated, while NDVI measures vegetation, adding Grey Level Co-occurrence Matrix (GLCM) textures better captures fine urban structures. Using `glcmTexture()` to quantify spatial heterogeneity significantly improves land-cover classification accuracy in such heterogeneous cities.
+
+Despite these strengths, a major limitation of GEE is its inability to natively process 3D point cloud data like LiDAR. Understanding modern cities requires monitoring 3D urban morphology (e.g., building heights and volumetric density), yet GEE cannot directly ingest .las or .laz files. As @bao2023 noted, researchers must pre-process LiDAR into 2D rasters (like DSMs) using local software before uploading them to GEE. This reliance on external processing breaks the seamless cloud workflow. Future advancements must overcome this bottleneck, potentially by integrating Cloud Optimized Point Clouds (COPC) natively or leveraging deep learning to extract 3D metrics directly from 2D composites.
+
+## Reflection
+
+To be honest, diving into Google Earth Engine this week was exciting but intimidating. Moving from familiar, click-based desktop GIS to writing server-side JavaScript felt like a huge leap. However, my "wow“ moment came when generating NDVI and GLCM maps for Delhi in seconds, without downloading massive datasets. It made me realize the future of spatial analysis relies on smart, cloud-based code rather than managing local hard drives.
+
+GEE isn't perfect, though. It is quite frustrating that it cannot natively process 3D LiDAR point clouds. Since understanding building heights and urban volumes is crucial for modern city planning, this feels like a major roadblock. But this limitation got me thinking: how can we creatively work around it? In future projects, I want to explore fusing Sentinel-1 SAR backscatter with Sentinel-2 optical data to see if we can use them as a proxy for estimating urban volumes. Ultimately, despite its steep learning curve and a few quirks, GEE has opened up exciting new avenues for my work, giving me the confidence to tackle planetary-scale datasets.
