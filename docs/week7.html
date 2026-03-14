@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./week8.html" rel="next">
 <link href="./week6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -201,6 +201,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./week8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -219,7 +225,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#cart" id="toc-cart" class="nav-link" data-scroll-target="#cart"><span class="header-section-number">6.1.1</span> CART</a></li>
   <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest"><span class="header-section-number">6.1.2</span> Random Forest</a></li>
-  <li><a href="#comparison" id="toc-comparison" class="nav-link" data-scroll-target="#comparison"><span class="header-section-number">6.1.3</span> Comparison</a></li>
+  <li><a href="#benefits-limitations-and-future-developments" id="toc-benefits-limitations-and-future-developments" class="nav-link" data-scroll-target="#benefits-limitations-and-future-developments"><span class="header-section-number">6.1.3</span> Benefits, Limitations, and Future Developments</a></li>
   </ul></li>
   <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">6.2</span> Application</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">6.3</span> Reflection</a></li>
@@ -250,7 +256,7 @@ window.Quarto = {
 
 <section id="summary" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.1</span> Summary</h2>
-<p>This week we learnt about machine learning methods, from the simplest linear regression, classification and regression trees (CART), to random forest, and how they can be implemented in GEE. They are useful methods for prediction or classification with remote sensing data.</p>
+<p>This week we learned about machine learning methods in Google Earth Engine (GEE), including CART and Random Forest, which are highly useful for remote sensing prediction and classification.</p>
 <section id="cart" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="cart"><span class="header-section-number">6.1.1</span> CART</h3>
 <p>CART predicts by repeatedly splitting data into smaller, more homogeneous subsets called nodes.</p>
@@ -262,8 +268,7 @@ window.Quarto = {
 <p style="text-align: left; color: gray; font-size: 0.8em;">
   CART structure.Source: <a href="https://python.plainenglish.io/cart-classification-and-regression-trees-part-i-20edc81f8296" style="color: gray; text-decoration: underline;">Medium</a>
 </p>
-<p>As its name suggests, CART can be used to predict both categorical (classification) and continuous (regression) values. For classification tasks, it measures how mixed a group is using <em>Gini Impurity</em>. The goal is to find splits that create the purest possible groups, and the final prediction is based on the majority vote in that final leaf. For regression tasks, it splits the data to find the <em>lowest Sum of Squared Residuals (SSR)</em>, outputting the average numerical value for that specific chunk of data.</p>
-<p>A major challenge with CART is knowing when to stop splitting. If the tree keeps growing until every leaf only has one data point, it will memorize the training data perfectly. This is called <strong>overfitting</strong>, meaning the model has high variance and will perform poorly on new, unseen data. To prevent this, we can restrict the tree’s growth by setting a minimum number of observations required to make a split (for example, setting the minimum to 20). Alternatively, we can use a technique called <em>pruning</em> to remove complex branches, which keeps the model simple and helps it generalize better.</p>
+<p>It handles classification by creating the purest possible groups (using <em>Gini Impurity</em>) and regression by finding <em>the lowest Sum of Squared Residuals (SSR)</em>. A major challenge is <em>overfitting</em>, where the tree memorizes training data perfectly but performs poorly on new data. This can be prevented by pruning complex branches or setting minimum observation thresholds for splitting.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/overfitting.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
@@ -305,10 +310,38 @@ window.Quarto = {
   Random forest classification in Tianjin
 </p>
 </section>
-<section id="comparison" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="comparison"><span class="header-section-number">6.1.3</span> Comparison</h3>
-<p>These maps show clear differences between the two methods. The CART map creates a slightly noisy or speckled look (often called the <em>salt-and-pepper effect</em>) with more scattered, isolated pixels. This may be because CART uses a single decision tree, which can sometimes overfit the training data.</p>
-<p>On the other hand, the Random Forest map looks cleaner and more uniform. This is because Random Forest combines many decision trees and averages their votes, which smooths out the individual errors. This highlights a major benefit of Random Forest: <strong>it handles noise much better and creates a more reliable, generalized map compared to CART.</strong></p>
+<section id="benefits-limitations-and-future-developments" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="benefits-limitations-and-future-developments"><span class="header-section-number">6.1.3</span> Benefits, Limitations, and Future Developments</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th>Benefits</th>
+<th>Limitation</th>
+<th>Future Developments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>CART</strong></td>
+<td>It is easy to understand and can flexibly handle both categorical (classification) and continuous (regression) data.</td>
+<td>It easily overfits the training data, often producing a noisy, salt-and-pepper effect on the map.</td>
+<td>It could be integrated with object-based image analysis (OBIA) to group pixels first, reducing those scattered, isolated pixel errors.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Random Forest</strong></td>
+<td>It creates a much cleaner, more generalized map because averaging many trees smooths out individual errors and handles noise well.</td>
+<td>It requires significantly more computational power and time to run since it builds and processes many trees instead of one.</td>
+<td>Future trends may focus on optimizing the algorithm’s computational efficiency for faster processing on massive, planetary-scale cloud datasets.</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="application" class="level2" data-number="6.2">
@@ -749,8 +782,8 @@ Oukawa, Gabriel Yoshikazu, Patricia Krecl, and Admir Créso Targino. 2022. <span
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week8.html" class="pagination-link" aria-label="Classification II">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification II</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

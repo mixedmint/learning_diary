@@ -100,6 +100,26 @@ var NDVIs = clip.normalizedDifference([SR_B5, SR_B4]);
 </p>
 ```
 
+### Benefits, Limitation and Future Development of GEE
+
+**Benefits:**
+
+-   It hosts decades of historical satellite data, allowing instant long-term environmental monitoring without downloading massive files.
+
+-   It revolutionizes scientific collaboration by allowing researchers to share reproducible analytical workflows via simple script links.
+
+**Limitations:**
+
+-   Processing high-resolution data over large areas frequently triggers "memory limit exceeded" or computation timeout errors.
+
+-   Some built-in functions act as black boxes, offering less mathematical transparency than writing custom local algorithms.
+
+**Future Development:**
+
+-   Future trends point toward deeper native integration with machine learning frameworks like TensorFlow for cloud-based AI analysis.
+
+-   The platform is expanding its Python API ecosystem (like *geemap*) to seamlessly connect with broader data science tools like Jupyter.
+
 ## Application
 
 The applications for Google Earth Engine are truly extensive. By removing the need to download massive raster datasets and process them locally, GEE has fundamentally shifted remote sensing towards cloud-based, planetary-scale analysis. It has dramatically expanded the scale, speed, and creativity of what researchers can achieve.

@@ -24,6 +24,13 @@ We explored the concept of “Spectral Feature Space” theoretically (e.g., Red
 
 However, in a complex urban environment, I questioned **whether the downsampling from 10m bands to 20m would result in a loss of details**. Merging distinct features like narrow streets and gardens into single pixels might create mixed signals, making the spectral signatures less accurate.
 
+### Sentinel-2 vs Landsat 8
+
+|   | Benefits | Limitation |
+|:--:|----|----|
+| **Sentinel-2** | Its high spatial resolution (10m) and fast revisit time (5 days) are ideal for capturing rapid, fine-scale landscape changes. | It completely lacks the thermal bands necessary for analyzing land surface temperatures and urban heat islands. |
+| **Landsat 8** | It provides crucial thermal infrared bands and a decades-long historical archive for long-term environmental and temperature monitoring. | Its lower resolution (30m) and longer revisit cycle (16 days) often miss fine, short-term details in complex urban areas. |
+
 ## Application
 
 In this week, I mainly focus on literatures concerning applications of Sentinel-2 spectral signature on **vegetation monitoring**. In this area, there is a notable shift in literature from relying on traditional broad-band indices to exploiting **specific narrow-band** spectral signatures.

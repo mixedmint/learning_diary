@@ -4,7 +4,7 @@ title: "Classification I"
 
 ## Summary
 
-This week we learnt about machine learning methods, from the simplest linear regression, classification and regression trees (CART), to random forest, and how they can be implemented in GEE. They are useful methods for prediction or classification with remote sensing data.
+This week we learned about machine learning methods in Google Earth Engine (GEE), including CART and Random Forest, which are highly useful for remote sensing prediction and classification.
 
 ### CART
 
@@ -18,9 +18,7 @@ CART predicts by repeatedly splitting data into smaller, more homogeneous subset
 </p>
 ```
 
-As its name suggests, CART can be used to predict both categorical (classification) and continuous (regression) values. For classification tasks, it measures how mixed a group is using *Gini Impurity*. The goal is to find splits that create the purest possible groups, and the final prediction is based on the majority vote in that final leaf. For regression tasks, it splits the data to find the *lowest Sum of Squared Residuals (SSR)*, outputting the average numerical value for that specific chunk of data.
-
-A major challenge with CART is knowing when to stop splitting. If the tree keeps growing until every leaf only has one data point, it will memorize the training data perfectly. This is called **overfitting**, meaning the model has high variance and will perform poorly on new, unseen data. To prevent this, we can restrict the tree's growth by setting a minimum number of observations required to make a split (for example, setting the minimum to 20). Alternatively, we can use a technique called *pruning* to remove complex branches, which keeps the model simple and helps it generalize better.
+It handles classification by creating the purest possible groups (using *Gini Impurity*) and regression by finding *the lowest Sum of Squared Residuals (SSR)*. A major challenge is *overfitting*, where the tree memorizes training data perfectly but performs poorly on new data. This can be prevented by pruning complex branches or setting minimum observation thresholds for splitting.
 
 ![](images/overfitting.svg){fig-align="center" width="80%"}
 
@@ -58,11 +56,12 @@ Here are the results of a Random Forest Classifier on the same imagery of Tianji
 </p>
 ```
 
-### Comparison
+### Benefits, Limitations, and Future Developments
 
-These maps show clear differences between the two methods. The CART map creates a slightly noisy or speckled look (often called the *salt-and-pepper effect*) with more scattered, isolated pixels. This may be because CART uses a single decision tree, which can sometimes overfit the training data.
-
-On the other hand, the Random Forest map looks cleaner and more uniform. This is because Random Forest combines many decision trees and averages their votes, which smooths out the individual errors. This highlights a major benefit of Random Forest: **it handles noise much better and creates a more reliable, generalized map compared to CART.**
+|   | Benefits | Limitation | Future Developments |
+|:--:|----|----|----|
+| **CART** | It is easy to understand and can flexibly handle both categorical (classification) and continuous (regression) data. | It easily overfits the training data, often producing a noisy, salt-and-pepper effect on the map. | It could be integrated with object-based image analysis (OBIA) to group pixels first, reducing those scattered, isolated pixel errors. |
+| **Random Forest** | It creates a much cleaner, more generalized map because averaging many trees smooths out individual errors and handles noise well. | It requires significantly more computational power and time to run since it builds and processes many trees instead of one. | Future trends may focus on optimizing the algorithm's computational efficiency for faster processing on massive, planetary-scale cloud datasets. |
 
 ## Application
 
