@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Sentinel-2 – Learning Diary</title>
+<title>8&nbsp; Temperature – Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week3.html" rel="next">
-<link href="./week1.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./week8.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,7 +90,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/fitvids-2.1.1/fitvids.min.js"></script>
 
 
 </head>
@@ -84,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sentinel-2</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week9.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Temperature</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -123,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./week2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sentinel-2</span></span></a>
   </div>
 </li>
@@ -159,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week9.html" class="sidebar-item-text sidebar-link">
+  <a href="./week9.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Temperature</span></span></a>
   </div>
 </li>
@@ -174,15 +193,28 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">8.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#urban-heat-island" id="toc-urban-heat-island" class="nav-link" data-scroll-target="#urban-heat-island"><span class="header-section-number">8.1.1</span> Urban Heat Island</a></li>
+  <li><a href="#exploring-urban-temperature" id="toc-exploring-urban-temperature" class="nav-link" data-scroll-target="#exploring-urban-temperature"><span class="header-section-number">8.1.2</span> Exploring Urban Temperature</a></li>
+  <li><a href="#comparison-of-datasets-landsat-vs-modis" id="toc-comparison-of-datasets-landsat-vs-modis" class="nav-link" data-scroll-target="#comparison-of-datasets-landsat-vs-modis"><span class="header-section-number">8.1.3</span> Comparison of Datasets (Landsat vs MODIS)</a></li>
+  </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">8.2</span> Applications</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">8.3</span> Reflection</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sentinel-2</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Temperature</span></h1>
 </div>
 
 
@@ -199,18 +231,120 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Here is a short presentation discussing <strong>Sentinel-2</strong> mission:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
-<iframe src="https://mixedmint.github.io/RS_xaringan/#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen=""></iframe>
-<script>fitvids('.shareagain', {players: 'iframe'});</script>
+<section id="summary" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.1</span> Summary</h2>
+<p>This week’s lecture focused on the intersection of urban temperature and policy, specifically how we can use remote sensing to understand and address rising heat in our cities.</p>
+<section id="urban-heat-island" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="urban-heat-island"><span class="header-section-number">8.1.1</span> Urban Heat Island</h3>
+<p>The <em>Urban Heat Island (UHI)</em> effect occurs when cities experience significantly higher temperatures than surrounding rural areas. As I explored in <a href="https://mixedmint.github.io/learning_diary/week4&amp;5.html">week4</a> analysis of Singapore, addressing UHI is vital for urban planning to protect public health and infrastructure.</p>
+<p>This warming is driven by several interacting factors in the built environment:</p>
+<ul>
+<li><p><strong>Heat absorption:</strong> Dark surfaces, like asphalt roads and rooftops, easily absorb and retain solar heat.</p></li>
+<li><p><strong>Reduced cooling:</strong> A lack of vegetation means less shade and less evapotranspiration to naturally cool the air.</p></li>
+<li><p><strong>Trapped heat:</strong> Tall buildings physically trap heat in the streets, keeping urban cores warmer, especially at night.</p></li>
+<li><p><strong>Human activity:</strong> Waste heat from vehicles, air conditioners, and factories generates additional warmth.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/UHI.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
 </div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Urban heat island. Source: <a href="https://coolroofs.org/resources/urban-heat-island-mitigation" style="color: gray; text-decoration: underline;">CRCC</a>
+</p>
+</section>
+<section id="exploring-urban-temperature" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="exploring-urban-temperature"><span class="header-section-number">8.1.2</span> Exploring Urban Temperature</h3>
+<p>In practical, I used Landsat and MODIS data to conduct a analysis of the Land Surface Temperature (LST) in Tianjin.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/landsat1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
 </div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Mean Landsat temperature for Tianjin in 2022. 
+</p>
+<p>The split effect happened because Landsat scans the Earth in vertical strips. My original code strictly removed any image with over 1% clouds. As a result, one side of the map used hot summer images, while the cloudy side was left with cooler autumn images. Averaging these different seasons created a sharp line.</p>
+<p>To fix this, I asked Gemini and increased the cloud limit to 50% and applied a pixel-level cloud mask. Instead of deleting entire images, this function only removes specific cloudy pixels. This ensures consistent summer data across the whole area, creating a smooth temperature map.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/landsat2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
 </div>
-<p>For full screen presentation of these slides, they are available <a href="https://mixedmint.github.io/RS_xaringan/#1">here</a>！</p>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Landsat temperature map after processing. 
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MODIS.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Mean MODIS temperature for Tianjin in 2022. 
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tem_time.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<p style="text-align: left; color: gray; font-size: 0.8em;">
+  Time series of temperature in Tianjin. 
+</p>
+</section>
+<section id="comparison-of-datasets-landsat-vs-modis" class="level3" data-number="8.1.3">
+<h3 data-number="8.1.3" class="anchored" data-anchor-id="comparison-of-datasets-landsat-vs-modis"><span class="header-section-number">8.1.3</span> Comparison of Datasets (Landsat vs MODIS)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th>Benefits</th>
+<th>Limitations</th>
+<th>Future Development</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Landsat</strong></td>
+<td>It provides high spatial detail, allowing us to see clear temperature differences between specific streets and parks.</td>
+<td>It only captures images every 16 days, so clouds can easily block the data for a long time.</td>
+<td>Researchers are using algorithms to combine MODIS’s daily updates with Landsat’s clear details to create a perfect daily map.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>MODIS</strong></td>
+<td>It collects data every day, making it very easy to track long-term trends and filter out cloudy days.</td>
+<td>The spatial resolution is very low (1km), which blurs the city into large blocks and hides local details.</td>
+<td>AI models are being used to sharpen the low-resolution MODIS data into high-resolution temperature maps.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="applications" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">8.2</span> Applications</h2>
+<p>To understand how remote sensing informs urban climate adaptation, I reviewed <span class="citation" data-cites="cotlier2022">Cotlier and Jimenez (<a href="references.html#ref-cotlier2022" role="doc-biblioref">2022</a>)</span>’s assessment of the 2021 Western North America heatwave. They applied MODIS and Landsat-8 data to extract Land Surface Temperature and map the Surface Urban Heat Island (SUHI) effect. By combining these satellite sources, both the daily progression of the disaster and its specific impacts on local neighborhoods can be captured. However, their study relies on Land Surface Temperature, which measures surface heat rather than the ambient air temperature humans actually experience, potentially misrepresenting true public health risks.</p>
+<p>Building directly on the need to translate surface heat into human-experienced temperatures, <span class="citation" data-cites="schaefer2021">Schaefer et al. (<a href="references.html#ref-schaefer2021" role="doc-biblioref">2021</a>)</span> provide a compelling micro-level solution. They combined high-resolution remote sensing data (such as Sentinel-2) with micro-climate simulations and pedestrian surveys. Instead of relying solely on macroscopic LST, this approach models the Physiologically Equivalent Temperature (PET) to evaluate the actual thermal comfort and air quality experienced by people on specific streets. This successfully addresses the human health gap identified earlier. However, a critical limitation of such detailed micro-climate modeling is its massive computational cost, making it difficult to scale across entire metropolitan areas. To overcome this, future literature should explore integrating machine learning algorithms to accelerate these simulations. This would allow planners to efficiently scale human-centric thermal models city-wide, balancing local pedestrian insights with broader urban policy needs.</p>
+</section>
+<section id="reflection" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">8.3</span> Reflection</h2>
+<p>Reflecting on this week, what struck me most was the gap between raw satellite data and human reality. When my Landsat code initially produced a fractured map due to cloud cover, it was a frustrating but eye-opening lesson. I realized that remote sensing is not just about downloading images. It needs careful processing, like the pixel-level cloud masking I applied, to show the true picture.</p>
+<p>Beyond the technical skills, I find the difference between satellite-measured surface heat and actual human comfort deeply fascinating. Satellites can easily spot a hot asphalt road, but they don’t feel the heat of a pedestrian waiting at an unshaded bus stop. Moving forward, I want to explore overlaying these thermal maps with socioeconomic datasets. If we can identify where the hottest urban areas intersect with the most vulnerable communities, we can use remote sensing not just to observe the Urban Heat Island, but to guide environmental justice, like deciding exactly which neighborhoods need new street trees the most.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-cotlier2022" class="csl-entry" role="listitem">
+Cotlier, Gabriel I., and Juan Carlos Jimenez. 2022. <span>“The Extreme Heat Wave over Western North America in 2021: An Assessment by Means of Land Surface Temperature.”</span> <em>Remote Sensing</em> 14 (3). <a href="https://doi.org/10.3390/rs14030561">https://doi.org/10.3390/rs14030561</a>.
+</div>
+<div id="ref-schaefer2021" class="csl-entry" role="listitem">
+Schaefer, Mathias, Haniyeh Ebrahimi Salari, Heike Köckler, and Nguyen Xuan Thinh. 2021. <span>“Assessing Local Heat Stress and Air Quality with the Use of Remote Sensing and Pedestrian Perception in Urban Microclimate Simulations.”</span> <em>Science of The Total Environment</em> 794 (November): 148709. <a href="https://doi.org/10.1016/j.scitotenv.2021.148709">https://doi.org/10.1016/j.scitotenv.2021.148709</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -615,13 +749,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week1.html" class="pagination-link" aria-label="Getting started with remote sensing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting started with remote sensing</span></span>
+      <a href="./week8.html" class="pagination-link" aria-label="Classification II">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification II</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week3.html" class="pagination-link" aria-label="Corrections">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Corrections</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
